@@ -5,3 +5,11 @@ block content
   h2= test
   p Welcome to #{title}
   div#some-id.some-class
+
+  - var html = "<script></script>"
+  | !{html}
+
+  // just some paragraphs
+  label
+    | Username:
+    input(name='user[name]')

@@ -7,6 +7,7 @@ ikanbao.fm
 ==========
 
   - 响应式Web设计，有效支持各种网络终端设备
+  - 部分SPA(Single Page Application)——单页面App
   - 设计风格：小清新
   - 使用[oocss](https://github.com/stubbornella/oocss)框架
   - 使用[Seajs](http://seajs.org)：模块化Javascript，降低前端代码冗余，分离视图与逻辑

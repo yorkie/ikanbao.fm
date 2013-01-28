@@ -9,8 +9,8 @@ ikanbao.fm
   - 响应式Web设计，有效支持各种网络终端设备
   - 设计风格：小清新
   - 使用[oocss](https://github.com/stubbornella/oocss)框架
-  - 使用Seajs：模块化Javascript，降低前端代码冗余，分离视图与逻辑
-  - view引擎：Jade，为了更好的使用express框架的优势，使用Jade作为主要视图引擎
+  - 使用[Seajs](http://seajs.org)：模块化Javascript，降低前端代码冗余，分离视图与逻辑
+  - 视图引擎[Jade](https://github.com/visionmedia/jade)，为了更好的使用express框架的优势，使用Jade作为主要视图引擎
   - MySQL & NoSQL：各展所长
   - 与业务代码分离，并基于MIT开放源代码
 
@@ -51,7 +51,7 @@ ikanbao.fm
       +-{other jade views}
     
     
-如何启动服务器
+如何启动服务器(How to do a Startup)
 =====================
 你只需像启动Express一样使用下面的代码即可：
 
@@ -60,3 +60,10 @@ ikanbao.fm
 不同的是我对服务器端的commandLine做了后续的命令载入，方便管理员启动/关闭服务器进程
 
 
+拓展阅读
+=============
+
+  1. seajs: http://seajs.org
+  2. express: http://expressjs.com
+  3. oocss: https://github.com/stubbornella/oocss
+  4. jade: https://github.com/visionmedia/jade

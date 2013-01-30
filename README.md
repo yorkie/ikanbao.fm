@@ -24,33 +24,22 @@ ikanbao.fm
     +-app.js                            // 启动服务器
     +-\assets                           // 静态资源 img,scripts,styles...
       +-\scripts
+        +-index.js
         +-\lib                          // Js引用库
           +-sea.js
           +-jquery.min.js
           +-{other js libraries}
-        +-index.js
       +-css/
       +-images/
-    +-\lib                              // 服务器端逻辑库
-      +-\handlers
-        +-index.js
-        +-combo.js
-        +-action.js
-      +-lang.js
-      +-log.js
+    +-\lib/                             // 服务器端逻辑库
     +-\node_modules                     // 引用的Node库
       +-express/
       +-jade/
       +-mysql/
-    +-\routes                           // 路由
-      +-index.js
-      +-reader.js
-      +-user.js
-    +-\views                            // 视图，不区分front end还是back end
-      +-layout.jade
-      +-home.jade
-      +-{other jade views}
-    
+      +-mongodb/
+    +-\routes/                          // 路由
+    +-\views/                           // 视图，不区分front end还是back end
+    +-\models/													// 数据模型
     
 如何启动服务器(How to do a Startup)
 =====================

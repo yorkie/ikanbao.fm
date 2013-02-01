@@ -41,7 +41,6 @@ global.app = app
 server = http.createServer(app)
 fn = function() {
   console.log("> Express server listening on port " + app.get('port'))
-  //model.db('mongodb').bind()
   process.stdout.write("> please press ENTER for stoping this server\n> ")
 }
 server.listen(app.get('port'), fn)

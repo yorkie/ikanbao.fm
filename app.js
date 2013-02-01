@@ -4,15 +4,15 @@
  */
 
 var 
-	express			= require('express'),
-  routes		  = require('./routes'),
-	handlers	  = require('./lib/handlers'),
-	http			  = require('http'),
-  path			  = require('path')
+  express			= require('express'),
+  http			  	= require('http'),
+  path			  	= require('path'),
+  routes		  	= require('./routes'),
+  handlers	  		= require('./lib/handlers')
 
 var 
-	app = express(),
-	server, fn
+  app = express(),
+  server, fn
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000)
@@ -40,8 +40,9 @@ global.app = app
 /* create http server and related something */
 server = http.createServer(app)
 fn = function() {
-	console.log("> Express server listening on port " + app.get('port'))
-	process.stdout.write("> please press ENTER for stoping this server\n> ")
+  console.log("> Express server listening on port " + app.get('port'))
+  //model.db('mongodb').bind()
+  process.stdout.write("> please press ENTER for stoping this server\n> ")
 }
 server.listen(app.get('port'), fn)
 
@@ -49,25 +50,21 @@ process.stdin.resume()
 process.stdin.setEncoding('utf8')
 process.stdin.on('data', function(chunk) {
 
-	if (chunk == '\n' || chunk == 'quit\n') {
-		console.log('> server stoped\n')
-		process.exit(1)
-	}
-	else if (chunk == 'http -close\n') {
-		process.stdout.write('> server closed, to ready for reopenning\n> ')
-		server.close()
-	}
-	else if (chunk == 'http -listen\n') {
-		server.listen(app.get('port'), fn)
-	}
-	else if (chunk == 'help\n') {
-		process.stdout.write('> helps for express\n> ')
-	}
-	else {
-		process.stdout.write('> could not found the command\n')
-		process.stdout.write('> data is:\n')
-		process.stdout.write('> ' + chunk)
-		process.stdout.write('> ')
-	}
+  if (chunk == '\n' || chunk == 'quit\n') {
+	console.log('> server stoped\n')
+	process.exit(1)
+  } else if (chunk == 'http -close\n') {
+	process.stdout.write('> server closed, to ready for reopenning\n> ')
+    server.close()
+  } else if (chunk == 'http -listen\n') {
+	server.listen(app.get('port'), fn)
+  } else if (chunk == 'help\n') {
+	process.stdout.write('> helps for express\n> ')
+  } else {
+	process.stdout.write('> could not found the command\n')
+	process.stdout.write('> data is:\n')
+	process.stdout.write('> ' + chunk)
+	process.stdout.write('> ')
+  }
 
 })

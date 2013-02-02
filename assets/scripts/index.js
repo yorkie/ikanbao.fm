@@ -1,7 +1,7 @@
 seajs.config({
 	base: '/scripts/',
 	alias: {
-		$: 'lib/jquery.min'
+		$: 'http://stk.ikanbao.fm:3000/scripts/lib/jquery.min'
 	}
 })
 seajs.use(['$'], function() {

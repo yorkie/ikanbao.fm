@@ -4,11 +4,11 @@
  */
 
 var 
-  express			= require('express'),
-  http			  	= require('http'),
-  path			  	= require('path'),
-  routes		  	= require('./routes'),
-  handlers	  		= require('./lib/handlers')
+  express			     = require('express'),
+  http			  	   = require('http'),
+  path			  	   = require('path'),
+  routes		  	   = require('./routes'),
+  handlers	       = require('./lib/handlers')
 
 var 
   app = express(),
@@ -24,17 +24,30 @@ app.configure(function(){
   app.use(express.bodyParser())
 	app.use(express.methodOverride())
   app.use(app.router)
-  app.use(express.static(path.join(__dirname, 'assets')))
 })
 
 app.configure('development', function(){
   app.use(express.errorHandler())
 })
 
-app.get('/', routes.home)
-app.get('/reader/:id', routes.reader)
-app.get('/users', routes.user.list)
-app.all('/handler/:timestamp/', routes.handler)
+// ikanbao.fm/profile
+app.use(function(req, res, next) {
+  if (req.subdomains.indexOf('stk') !== -1) {
+    express.static(__dirname + '/assets').apply(this, arguments)
+  }
+  else {
+    if (req.path == '/') {
+      routes.home.apply(this, arguments)
+    }
+    else if (/^\/api\//i.test(req.path)) {
+      routes.handler.apply(this, arguments)
+    }
+    else {
+      routes.user.index.apply(this, arguments)
+    }
+  }
+})
+
 global.app = app
 
 /* create http server and related something */
@@ -45,6 +58,7 @@ fn = function() {
 }
 server.listen(app.get('port'), fn)
 
+/* process - move to new module later */
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
 process.stdin.on('data', function(chunk) {

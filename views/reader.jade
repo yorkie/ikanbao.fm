@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  p Welcome to
+  div#some-id.some-class
+
+  - var html = "<script></script>"
+  | !{html}
+
+  // just some paragraphs
+  label
+    | Username:
+    input(name='user[name]')
+
+  <a>aaa</a>

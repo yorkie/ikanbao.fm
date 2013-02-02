@@ -1,18 +1,17 @@
 
 /* module dependencies */
-var combo					 = require('../lib/handlers').combo
+var combo = require('../lib/handlers').combo
 
 /* routers management */
-exports.user			 = require('./user')
-exports.reader		 = require('./reader')
-
+exports.user = require('./user')
+exports.reader = require('./reader')
 
 /*
  * GET home page.
  */
 
 exports.home = function(req, res) {
-  
+   	
 	res.render('home', { title: 'Express', test: 'test' });
 	return;	
 	

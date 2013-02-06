@@ -1,15 +1,60 @@
 extends layout
 
 block content
-  h1= title
-  h2= test
-  p Welcome to #{title}
-  div#some-id.some-class
+  div(class='container-fluid')
+    div(class='row')
 
-  - var html = "<script></script>"
-  | !{html}
+      div(class='span4')
+        p
+          blockquote
+            | Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
 
-  // just some paragraphs
-  label
-    | Username:
-    input(name='user[name]')
+      div(class='span4')
+        form
+          fieldset
+            legend Legend
+            label  Lebel name
+            input(type='text', placeholder='Type something...')
+            span(class='help-block')
+              | Example block-level help text here.
+            label(class='checkbox')
+              input(type='checkbox')
+              | Check me out
+            button(type='submit', class='btn') Submit
+
+    div(class='row')
+
+      div(class='span5')
+        div(class='input-prepend')
+          span(class="add-on") @
+          input(type='span2', 
+            id="prependedInput", 
+            type="text", 
+            placeholder="Username")
+        div(class='input-append')
+          input(class='span2',
+            id='appendedInput',
+            type='text')
+          span(class='add-on') .00
+        div(class='input-append')
+          i(class='icon-hdd')
+          input(class='span2', id='appendedDropdownButton', type='text')
+          div(class='btn-group')
+            button(class='btn dropdown-toggle', data-toggle='dropdown')
+              | Action
+              span(class='caret')
+            ul(class='dropdown-menu')
+              li 
+                a(href='#') Action
+              li 
+                a(href='#') Another action
+              li 
+                a(href='#') Something else here
+              li(class='divider')
+              li 
+                a(href='#') Separated link
+
+
+
+
+

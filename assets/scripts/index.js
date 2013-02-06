@@ -1,11 +1,16 @@
-seajs.config({
-	base: '/scripts/',
-	alias: {
-		$: 'http://stk.ikanbao.fm:3000/scripts/lib/jquery.min'
-	}
-})
-seajs.use(['$'], function() {
+var prefix = 1 ? 'http://stk.ikanbao.fm:3000' : ''
 
-		console.log('hello World')
+seajs.config({
+	alias: {
+		'jquery': prefix + '/scripts/lib/jquery.min',
+		'bootstrap': prefix + '/scripts/lib/bootstrap.min.js'
+	},
+	preload: [
+		'jquery'
+	],
+	base: '/scripts/'
+})
+
+seajs.use(['bootstrap'], function() {
 
 })

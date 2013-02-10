@@ -18,6 +18,22 @@ exports.home = function(req, res) {
 }
 
 /*
+ * GET for testing Model
+ */
+
+var Models = require('express-model')
+exports.testModel = function(req, res) {
+
+	var model = Models.use('User', function() {
+		this.title = 'Express'
+		this.forTestString = 'TestString'
+	})
+	res.render('home', model)
+	return;
+}
+
+
+/*
  * GET hanlders
  */
 

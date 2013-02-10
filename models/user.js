@@ -1,37 +1,52 @@
+var Models = require('express-model')
 
-var modelHelper = require('../lib/mvc/modelSupport')
+/* define a model 'User' */
+Models.define('User', function(out, db) {
 
-exports.User = modelHelper.define({
+	var username, password, nickname;
 
-	username: function(state) {
-		// get
-	},
-	password: function(state) {
-		// get
-	},
-	nick: function(state) {
-		// get
-	},
+	// constructor
+	out.constructor = function(username) {
 
-	set_username: false,
-	set_password: false
+		// connect to the special database for querying...
+		db.connect('db').query('query tables', function(doc) {
+			username = doc.username
+			password = doc.password
+			nickname = doc.nickname
+		})
+
+	}
+
+
+	// define getter
+	out.username = function() {
+		return username
+	}
+	out.password = function() {
+		return password
+	}
+	out.nickname = function() {
+		return nickname
+	}
+
+	// define setter
+	out.setUsername = function(username) {
+		db.connect('db').update('username', username)
+	}
+	out.setPassword = function(password) {
+		db.connect('db').update('password', password)
+	}
+	out.setNickname = function(nickname) {
+		db.connect('db').update('nickname', nickname)
+	}
+
+	// define others
+	out.forTestOtherOperators = function() {
+		db.connect('db')
+	}
+
+
+	return;
 
 })
 
-// Sample
-var user = new Models.User({ 
-	username: 'yorkie', 
-	password: 'lyz900422' 
-})
-user.nick()
-user.password()
-user.map(['username', 'password'])
-
-user.setUsername('Yorkie-u')	// will returns a error
-user.setPassword('l900422')		// will returns a error
-user.setNick('lash')
-user.set({
-	username: 'kk',
-	password: 'qk-wd',
-	nick: 'nono'
-})

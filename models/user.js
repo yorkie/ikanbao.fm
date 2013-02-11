@@ -3,11 +3,10 @@
 Models.define('User', function(out, db, cache) {
 
 	// if u wanna use specilized db, such as mysql, u can declear by this.
-	/*
 	db.use('mysql', function(db) {
 		// body
+		//console.log(db)
 	})
-	*/
 
 	// constructor
 	out._constructor = function(username) {
@@ -20,9 +19,18 @@ Models.define('User', function(out, db, cache) {
 			nickname = doc.nickname
 		})
 		*/
+		db.createConnection('mongodb://127.0.0.1:27017/test')
+
+		var PersonSchema = new db.Schema({
+			username: String,
+			password: String,
+			nickname: String
+		})
+		var me = db.model('yorkie', PersonSchema)
+
 		cache.username = 'Yorkie'
 		cache.password = 'test'
-		cache.nickname = username
+		cache.nickname = ''
 	}
 
 

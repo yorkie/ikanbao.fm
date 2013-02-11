@@ -12,7 +12,7 @@ exports.reader = require('./reader')
 
 exports.home = function(req, res) {
 
-	var model = Models.use('User', 'aha', function() {
+	var model = Models.use('User', 'yorkie', function() {
 		this.title = 'Express'
 		this.forTestString = 'TestString'
 	})

@@ -22,7 +22,7 @@ Models.define('User', function(out, db, cache) {
 		*/
 		cache.username = 'Yorkie'
 		cache.password = 'test'
-		cache.nickname = cache.username
+		cache.nickname = username
 	}
 
 

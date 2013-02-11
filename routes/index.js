@@ -11,27 +11,16 @@ exports.reader = require('./reader')
  */
 
 exports.home = function(req, res) {
-   	
-	res.render('home', { title: 'Express', test: 'test' });
-	return;	
-	
-}
-
-/*
- * GET for testing Model
- */
-
-var Models = require('express-model')
-exports.testModel = function(req, res) {
 
 	var model = Models.use('User', function() {
 		this.title = 'Express'
 		this.forTestString = 'TestString'
 	})
-	res.render('home', model)
-	return;
-}
 
+	res.render('home', model)
+	return;	
+	
+}
 
 /*
  * GET hanlders

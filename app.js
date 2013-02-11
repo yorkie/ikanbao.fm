@@ -4,11 +4,12 @@
  */
 
 var 
-  express			     = require('express'),
-  http			  	   = require('http'),
-  path			  	   = require('path'),
-  routes		  	   = require('./routes'),
-  handlers	       = require('./lib/handlers')
+  express = require('express'),
+  http = require('http'),
+  path = require('path'),
+  models = require('express-model'),
+  routes = require('./routes'),
+  handlers = require('./lib/handlers')
 
 var 
   app = express(),
@@ -31,7 +32,6 @@ app.configure('development', function(){
   app.use(express.errorHandler())
 })
 
-// ikanbao.fm/profile
 app.use(function(req, res, next) {
   if (req.subdomains.indexOf('stk') !== -1) {
     express.static(__dirname + '/assets').apply(this, arguments)
@@ -50,6 +50,8 @@ app.use(function(req, res, next) {
 })
 
 global.app = app
+global.Models = models(__dirname + '/models')
+
 
 /* create http server and related something */
 server = http.createServer(app)

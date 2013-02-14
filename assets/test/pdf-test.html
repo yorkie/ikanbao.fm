@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+	<meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>A Test Page for PDFJS</title>
+	<script type="text/javascript" src="/scripts/lib/pdf.js"></script>
+</head>
+
+<body>
+	<canvas id="the-canvas"></canvas>
+	<script>
+
+		var url = 'http://ikanbao.fm:3000/test/pdf/LISP-1.5-programmers-manual.pdf'
+		PDFJS.disableWorker = true
+		PDFJS.getDocument(url).then(function(doc) {
+			doc.getPage(1).then(function(page) {
+				$= page
+			})
+		})
+
+	</script>
+</body>
+
+</html>

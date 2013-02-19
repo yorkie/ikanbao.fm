@@ -15,8 +15,9 @@
 		var url = 'http://ikanbao.fm:3000/test/pdf/LISP-1.5-programmers-manual.pdf'
 		PDFJS.disableWorker = true
 		PDFJS.getDocument(url).then(function(doc) {
-			doc.getPage(1).then(function(page) {
-				$= page
+			$ = doc
+			doc.getData().then(function() {
+				console.log(arguments)
 			})
 		})
 

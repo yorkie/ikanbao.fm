@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 /**
  * Module dependencies.
@@ -8,6 +9,7 @@ var
   http = require('http'),
   path = require('path'),
   util = require('util'),
+  combo = require('combo'),
   models = require('express-model'),
   routes = require('./routes'),
   handlers = require('./lib/handlers'),
@@ -24,16 +26,45 @@ app.configure(function() {
   app.set('views', __dirname + '/views')
   app.set('root', __dirname)
 
-  app.use(express.logger('dev'))
   app.use(express.cookieParser('some secret here'))
   app.use(express.session())
   app.use(express.bodyParser())
   app.use(express.methodOverride())
+  app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
   app.use(app.router)
-  
+  app.use(function(req, res, next) {
+    if (!/\/$/.test(req.path))
+      res.redirect(req.path + '/')
+    else
+      next()
+  })
+
+  app.get('/scripts/lib', combo.combine({rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
+    res.end(res.body)
+  })
   app.get('/', routes.home)
-  app.get('/api/', routes.handler)
+  app.get('/settings/*', routes.settings)
+  app.get('/go/*', routes.go)
+  app.get('/login/', routes.login)
+  app.get('/register/', routes.register)
+  app.get('/extend/*', routes.extend)
+  app.get('/:username/', routes.user)
+  app.get('/:username/:kanID', routes.KAN)
+  app.get('/:username/:kanID/:issue/', routes.issue)
+
+  app.post('/api/*', routes.api)
+
+  // route demos
+  // - http://ikanbao.fm
+  // - http://ikanbao.fm/settings/
+  // - http://ikanbao.fm/store/
+  // - http://ikanbao.fm/api/
+  // - http://ikanbao.fm/go/
+  // - http://ikanbao.fm/test/
+  // - http://ikanbao.fm/login/
+  // - http://ikanbao.fm/signup/
+  // - http://ikanbao.fm/others/
 
   global.app = app;
   global.Models = models(__dirname + '/models')
@@ -51,12 +82,3 @@ http.createServer(app).listen(app.get('port'), function() {
 
 /* 启动数据库服务器　*/
 db.createServer()
-
-/* process - move to new module later */
-process.stdin.resume()
-process.stdin.setEncoding('utf8')
-process.stdin.on('data', function(chunk) {
-  console.log('Server stoped\n')
-  process.exit()
-})
-

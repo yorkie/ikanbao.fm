@@ -2057,6 +2057,7 @@ var PageView = function pageView(container, pdfPage, id, scale,
         cont();
       }
     };
+    
     this.pdfPage.render(renderContext).then(
       function pdfPageRenderCallback() {
         pageViewDrawCallback(null);

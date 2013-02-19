@@ -3,8 +3,9 @@
 var combo = require('../lib/handlers').combo
 
 /* routers management */
-exports.user = require('./user')
-exports.reader = require('./reader')
+//exports.user = require('./user')
+//exports.reader = require('./reader')
+//exports.test = require('./test')
 
 /*
  * GET home page.
@@ -22,19 +23,83 @@ exports.home = function(req, res) {
 	
 }
 
-/*
- * GET hanlders
+/**
+ * GET settings
  */
 
-exports.handler = function(req, res) {
-		
-	combo.all(req.query, function(err, one) {
-		if (err) {
-			res.status(404)			
-			return;
-		}
-		res.status(one.isCached ? 301 : 200)
-		res.set(one.headers)
-		res.send(one.body)
-	})
+exports.settings = function(req, res) {
+	res.end('settings')
 }
+
+/**
+ * GET go
+ */
+
+exports.go = function(req, res) {
+	res.end('It is for redirecting a specified url')
+}
+
+/**
+ * GET login
+ */
+
+exports.login = function(req, res) {
+	res.end('login - !')
+}
+
+/**
+ * GET reg
+ */
+
+exports.register = function(req, res) {
+	res.end('reg')
+}
+
+/**
+ * GET extend
+ */
+
+exports.extend = function(req, res) {
+	res.end('extend')
+}
+
+/**
+ * GET {username}
+ */
+
+exports.user = function(req, res) {
+	res.end('username: ' + req.params.username)
+}
+
+/**
+ * GET {username}/{kanID}
+ */
+
+exports.KAN = function(req, res) {
+	res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID)
+}
+
+/**
+ * GET {username}/{kanID}/{issue}/
+ */
+
+exports.issue = function(req, res) {
+		res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
+}
+
+
+
+// ==========================================
+// ====== POST ==============================
+// ==========================================
+
+/** 
+ * POST api
+ */
+
+exports.api = function(req, res) {
+	res.end('api[post]')
+}
+
+
+

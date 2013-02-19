@@ -1,16 +1,37 @@
-var prefix = 1 ? 'http://stk.ikanbao.fm:3000' : ''
+
+/* config */
+
+var prefix = ''
 
 seajs.config({
 	alias: {
 		'jquery': prefix + '/scripts/lib/jquery.min',
 		'bootstrap': prefix + '/scripts/lib/bootstrap.min.js'
 	},
+	vars: {
+		// TODO
+	},
 	preload: [
-		'jquery'
+		'jquery',
+		'bootstrap'
 	],
-	base: '/scripts/'
+	plugins: [
+		'shim',
+		'text',
+		'combo'
+	],
+	comboSyntax: ['?', '&'],
+	shim: {
+		// TODO
+	},
+	base: '/scripts/',
+	debug: true
 })
 
-seajs.use(['bootstrap'], function() {
+/* startup */
+
+seajs.use([], function() {
+	
+	// TODO
 
 })

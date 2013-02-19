@@ -1875,7 +1875,7 @@ var WorkerTransport = (function WorkerTransportClosure() {
       messageHandler.on('RenderPage', function transportRender(data) {
         var page = this.pageCache[data.pageIndex];
         var depFonts = data.depFonts;
-
+        console.log(window.$=page)
         page.stats.timeEnd('Page Request');
         page.startRenderingFromOperatorList(data.operatorList, depFonts);
       }, this);
@@ -1920,6 +1920,9 @@ var WorkerTransport = (function WorkerTransportClosure() {
           case 'Image':
             var imageData = data[3];
             pageProxy.objs.resolve(id, imageData);
+
+            if (!window.imgDataVector) window.imgDataVector = []
+            window.imgDataVector.push(imageData)
 
             // heuristics that will allow not to store large data
             var MAX_IMAGE_SIZE_TO_STORE = 8000000;

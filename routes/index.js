@@ -13,14 +13,18 @@ var combo = require('../lib/handlers').combo
 
 exports.home = function(req, res) {
 
+	/*
 	var model = Models.use('User', 'yorkie', function() {
 		this.title = 'Express'
 		this.forTestString = 'TestString'
 	})
 
 	res.render('home', model)
-	return;	
-	
+	*/
+	//res.clearCookie('name')
+	//req.session['test'] = 1
+	//res.cookie('name', 'haha123')
+	res.end('')
 }
 
 /**
@@ -44,7 +48,7 @@ exports.go = function(req, res) {
  */
 
 exports.login = function(req, res) {
-	res.end('login - !')
+	res.render('login')
 }
 
 /**
@@ -52,7 +56,7 @@ exports.login = function(req, res) {
  */
 
 exports.register = function(req, res) {
-	res.end('reg')
+	res.render('register')
 }
 
 /**

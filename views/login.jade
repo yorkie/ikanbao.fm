@@ -1,0 +1,37 @@
+extend shared/skeleton
+
+block append head
+  
+  style
+    form {
+      -webkt-border-radius: 6px;
+        -moz-border-radius: 6px;
+          -o-border-radius: 6px;
+             border-radius: 6px;
+      border:  1px solid #ccc;
+      padding: 30px;
+      margin-top: 90px;
+    }
+    form input {
+      width:  95%;
+      margin-top: 5px;
+    }
+
+
+
+block append content
+
+  div.container
+    div.row
+      div.span4.offset4
+        form(method='post', action='/api/login/')
+          fieldset
+            legend 登陆{AppName}
+            label  
+              | 用户名/电子邮箱
+              input(type='text', name='username', placeholder='请输入用户名')
+            label  
+              | 密码 
+              input(type='text', name='password', placeholder='密码')
+            p
+              button#submit.btn.btn-success 登陆

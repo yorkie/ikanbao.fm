@@ -1,0 +1,49 @@
+//- for all headers
+//- copyright 2013
+
+style
+  .header {
+    -webkit-box-shadow: 1px 1px 5px #ddd;
+       -moz-box-shadow: 1px 1px 5px #ddd;
+         -o-box-shadow: 1px 1px 5px #ddd;
+            box-shadow: 1px 1px 5px #ddd;
+    border-bottom:      1px solid #ccc;
+  }
+  .header div {
+    padding-top: 15px;
+  }
+  .header-right button {
+    margin-right: 5px;
+  }
+
+
+div.container
+  div.header.row
+    div.span1.offset1 logo
+    div.span6
+      ul.nav.nav-pills
+        li
+          a 
+        li
+          a item2
+        li
+          a item3
+        li
+          a item4
+        li.dropdown
+          a.dropdown-toggle(data-toggle='dropdown', href='#')
+            | more
+            b.caret
+          ul.dropdown-menu
+            li
+              a item5
+            li
+              a item6
+            li.divider
+            li
+              a item7
+
+
+    div.header-right.span3.offset1
+      button.btn.btn-success(onclick='location.href="/register/"') 免费注册
+      button.btn(onclick='location.href="/login/"') 登陆

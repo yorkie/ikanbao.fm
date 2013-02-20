@@ -25,7 +25,7 @@ app.configure(function() {
   app.set('view engine', 'jade')
   app.set('views', __dirname + '/views')
   app.set('root', __dirname)
-
+  
   app.use(express.cookieParser('some secret here'))
   app.use(express.session())
   app.use(express.bodyParser())

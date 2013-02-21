@@ -12,6 +12,7 @@ var
   combo = require('combo'),
   models = require('express-model'),
   routes = require('./routes'),
+  auth = require('./lib/auth'),
   handlers = require('./lib/handlers'),
   db = require('./lib/db')
 
@@ -26,28 +27,49 @@ app.configure(function() {
   app.set('views', __dirname + '/views')
   app.set('root', __dirname)
   
-  app.use(express.cookieParser('some secret here'))
-  app.use(express.session())
+  app.use(express.cookieParser())
+  app.use(express.session({ secret: 'htuayreve'}))
   app.use(express.bodyParser())
   app.use(express.methodOverride())
   app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
-  app.use(app.router)
-  app.use(function(req, res, next) {
+  app.use(filterHandler)
+  app.use(localsHandler)
+  app.use(auth.middleware())
+  app.use(afterAuthenticatedHandler)
+  
+  function filterHandler(req, res, next) {
     if (!/\/$/.test(req.path))
       res.redirect(req.path + '/')
     else
       next()
-  })
+  }
 
+  function localsHandler(req, res, next) {
+    res.locals.loginFormFieldName = auth.password.loginFormFieldName()
+    res.locals.passwordFormFieldName = auth.password.passwordFormFieldName()
+    res.locals.user = {
+      isAuthenticated: false,
+    }
+    next()
+  }
+
+  function afterAuthenticatedHandler(req, res, next) {
+    if (req.user) {
+      res.locals.user.isAuthenticated = true
+      res.locals.user.name = req.user.login
+      res.locals.user.id = req.user.id
+    }
+    next()
+  }
+
+  app.use(app.router)
   app.get('/scripts/lib', combo.combine({rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
     res.end(res.body)
   })
   app.get('/', routes.home)
   app.get('/settings/*', routes.settings)
   app.get('/go/*', routes.go)
-  app.get('/login/', routes.login)
-  app.get('/register/', routes.register)
   app.get('/extend/*', routes.extend)
   app.get('/:username/', routes.user)
   app.get('/:username/:kanID', routes.KAN)

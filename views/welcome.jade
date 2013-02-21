@@ -1,0 +1,78 @@
+
+//- Welcome
+extend shared/skeleton
+
+
+block append head
+  
+  style
+
+    .welcome-container .row-fluid {
+      margin-top: 20px;
+    }
+
+    .welcome-container h1 {
+      font-size:3em
+    }
+
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+      .header-container .row {
+        margin-top: 5px;
+      }
+    }
+
+block append content
+
+  div.welcome-container.container
+    div.row-fluid
+      div.span10.offset1
+        h1 iKanbao.fm 1.0
+        p  Powerful collaboration, review, and code management for open source and private development projects.
+
+    div.row-fluid
+      div.span10.offset1
+        ul.thumbnails
+        
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+    div.row-fluid
+      div.span10.offset1
+        ul.thumbnails
+        
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+          li.span4
+            div.thumbnail
+              img(data-src='holder.js/300x300', alt='')
+              h3 Thumbnail label
+              p  Thumbnail caption
+
+
+      

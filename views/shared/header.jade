@@ -2,48 +2,89 @@
 //- copyright 2013
 
 style
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #fcfcfc;
+    padding-top: 70px;
+  }
   .header {
-    -webkit-box-shadow: 1px 1px 5px #ddd;
-       -moz-box-shadow: 1px 1px 5px #ddd;
-         -o-box-shadow: 1px 1px 5px #ddd;
-            box-shadow: 1px 1px 5px #ddd;
+    -webkit-box-shadow: 1px 1px 5px #eee;
+       -moz-box-shadow: 1px 1px 5px #eee;
+         -o-box-shadow: 1px 1px 5px #eee;
+            box-shadow: 1px 1px 5px #eee;
     border-bottom:      1px solid #ccc;
+    background:                   #fff;
+    width: 100%;
+    position:absolute;
+    left:0;
+    top: 0;
   }
-  .header div {
-    padding-top: 15px;
+  .header-logo {
+    margin-right: 30px;
   }
-  .header-right button {
-    margin-right: 5px;
+  .header-container .row {
+    margin-top: 15px;
   }
 
+  /* Landscape phones and down */
+  @media (max-width: 767px) {
+    body {
+      padding-top: 0;
+    }
+    .header {
+      position: fixed;
+      bottom: 0px;
+      top: auto;
+      border: 0;
+    }
+    .header-phoneNavbar a.btn {
+      padding:20px 3% 20px 3%;
+      width: 28%;
+    }
 
-div.container
-  div.header.row
-    div.span1.offset1 logo
-    div.span6
-      ul.nav.nav-pills
-        li
-          a 
-        li
-          a item2
-        li
-          a item3
-        li
-          a item4
-        li.dropdown
-          a.dropdown-toggle(data-toggle='dropdown', href='#')
-            | more
-            b.caret
-          ul.dropdown-menu
-            li
-              a item5
-            li
-              a item6
-            li.divider
-            li
-              a item7
+  }
 
+div.header
+  div.header-container.container
+    div.row
+      div.span6.offset1
+        div.header-phoneNavbar.btn-group.visible-phone
+          a.btn.btn-large(href='#') 发现
+          a.btn.btn-large(href='#') 首页
+          a.btn.btn-large(href='#') 设置
+        div.hidden-phone
+          a.header-logo.pull-left.hidden-tablet(href='/')
+            img(data-src='holder.js/170x30')
+          form.header-search.form-inline
+            input(type='text', placeholder='搜索报刊/主编')
+        
+      div.header-right.span3.offset1.hidden-phone
+        if user.isAuthenticated == false
+          div.btn-group
+            a.btn.btn-success(href='/register/') 免费注册
+          div.btn-group
+            a.btn(href='/login/') 登陆
+        else
+          div.btn-group
+            a.btn(href='#')
+              i.icon-user.icon-gray
+              |  yorkie
+            a.btn.dropdown-toggle(data-toggle='dropdown')
+              span.caret
+            ul.dropdown-menu
+              li
+                a 发表
+              li
+                a 个人中心
+              li
+                a 主编中心
+              li.divider
+              li
+                a 设置
+              li.hidden-desktop
+                a 退出
+          div.btn-group
+            a.btn.btn-danger.hidden-tablet
+              i.icon-off.icon-white
 
-    div.header-right.span3.offset1
-      button.btn.btn-success(onclick='location.href="/register/"') 免费注册
-      button.btn(onclick='location.href="/login/"') 登陆

@@ -3,6 +3,7 @@ extend shared/skeleton
 block append head
   
   style
+
     form {
       -webkt-border-radius: 6px;
         -moz-border-radius: 6px;
@@ -11,27 +12,47 @@ block append head
       border:  1px solid #ccc;
       padding: 30px;
       margin-top: 90px;
+      width: 100%;
     }
+
     form input {
       width:  95%;
       margin-top: 5px;
+    }
+
+    .login-container {
+      width: 300px;
+    }
+ 
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+      form {
+        margin-top: 20px;
+        padding: 20px;
+        width: 85%;
+        border: 0;
+      }
+      .login-container {
+        width: 100%;
+      }
     }
 
 
 
 block append content
 
-  div.container
-    div.row
-      div.span4.offset4
-        form(method='post', action='/api/login/')
-          fieldset
-            legend 登陆{AppName}
-            label  
-              | 用户名/电子邮箱
-              input(type='text', name='username', placeholder='请输入用户名')
-            label  
-              | 密码 
-              input(type='text', name='password', placeholder='密码')
-            p
-              button#submit.btn.btn-success 登陆
+  div.login-container.container
+    form(method='post', action='/login/')
+      fieldset
+        legend 登陆{AppName}
+        label  
+          | 用户名/电子邮箱
+          input(type='text', name=loginFormFieldName, placeholder='请输入用户名')
+        label  
+          | 密码 
+          input(type='password', name=passwordFormFieldName, placeholder='密码')
+        p
+          div.btn-group
+            button#submit.btn.btn-success 登陆
+          div.btn-group
+            button.btn.visible-phone 免费注册

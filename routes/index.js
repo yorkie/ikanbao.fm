@@ -1,6 +1,6 @@
 
 /* module dependencies */
-var combo = require('../lib/handlers').combo
+
 
 /* routers management */
 //exports.user = require('./user')
@@ -12,19 +12,11 @@ var combo = require('../lib/handlers').combo
  */
 
 exports.home = function(req, res) {
-
-	/*
-	var model = Models.use('User', 'yorkie', function() {
-		this.title = 'Express'
-		this.forTestString = 'TestString'
-	})
-
-	res.render('home', model)
-	*/
-	//res.clearCookie('name')
-	//req.session['test'] = 1
-	//res.cookie('name', 'haha123')
-	res.end('')
+	if (!req.user) {
+		res.render('welcome')
+	} else {
+		res.render('welcomeAuthenticated')
+	}
 }
 
 /**
@@ -41,22 +33,6 @@ exports.settings = function(req, res) {
 
 exports.go = function(req, res) {
 	res.end('It is for redirecting a specified url')
-}
-
-/**
- * GET login
- */
-
-exports.login = function(req, res) {
-	res.render('login')
-}
-
-/**
- * GET reg
- */
-
-exports.register = function(req, res) {
-	res.render('register')
 }
 
 /**

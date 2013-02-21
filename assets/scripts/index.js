@@ -5,15 +5,17 @@ var prefix = ''
 
 seajs.config({
 	alias: {
-		'jquery': prefix + '/scripts/lib/jquery.min',
-		'bootstrap': prefix + '/scripts/lib/bootstrap.min.js'
+		'jquery': prefix + '/scripts/lib/jquery-1.7.2.js',
+		'bootstrap': prefix + '/scripts/lib/bootstrap.min.js',
+		'holder': prefix + '/scripts/lib/holder.js'
 	},
 	vars: {
 		// TODO
 	},
 	preload: [
 		'jquery',
-		'bootstrap'
+		'bootstrap',
+		'holder'
 	],
 	plugins: [
 		'shim',
@@ -30,8 +32,8 @@ seajs.config({
 
 /* startup */
 
-seajs.use([], function() {
+seajs.use('utils/fixed', function(Fixed) {
 	
-	// TODO
+	Fixed('#home-slider', 5)
 
 })

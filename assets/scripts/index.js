@@ -34,6 +34,11 @@ seajs.config({
 
 seajs.use('utils/fixed', function(Fixed) {
 	
+	$('#home-slider').on('click', function() {
+		console.log(1)
+	})
+
 	Fixed('#home-slider')
+
 
 })

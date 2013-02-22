@@ -34,6 +34,6 @@ seajs.config({
 
 seajs.use('utils/fixed', function(Fixed) {
 	
-	Fixed('#home-slider', 5)
+	Fixed('#home-slider')
 
 })

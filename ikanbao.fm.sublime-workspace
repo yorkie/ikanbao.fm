@@ -1,0 +1,381 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"auth",
+				"authenticationMiddleware"
+			],
+			[
+				"is",
+				"isAuthenticated"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"wel",
+				"welcomeAuthenticated"
+			],
+			[
+				"pre",
+				"preLocalsHandler"
+			],
+			[
+				"sour",
+				"sourceUser"
+			],
+			[
+				"app",
+				"appSecret"
+			],
+			[
+				"defer",
+				"deferred"
+			],
+			[
+				"def",
+				"deferred"
+			],
+			[
+				"a",
+				"autoLoginValidation"
+			],
+			[
+				"auto",
+				"autoLogin"
+			],
+			[
+				"imgdata",
+				"imgDataVector"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"imageda",
+				"imageDataPromise"
+			],
+			[
+				"set",
+				"settings"
+			],
+			[
+				"kan",
+				"kanId"
+			],
+			[
+				"test",
+				"testDB"
+			],
+			[
+				"User",
+				"UserSchame"
+			],
+			[
+				"moo",
+				"moggoose"
+			],
+			[
+				"on",
+				"onlyOneToken"
+			],
+			[
+				"get",
+				"getPage"
+			],
+			[
+				"creat",
+				"createMysqlServer"
+			],
+			[
+				"crea",
+				"createMongooseServer"
+			],
+			[
+				"rout",
+				"routes"
+			],
+			[
+				"express",
+				"express-model"
+			],
+			[
+				"_",
+				"_constructor"
+			],
+			[
+				"this",
+				"thisDatabaseContext"
+			],
+			[
+				"defau",
+				"defaultDB"
+			],
+			[
+				"defa",
+				"defaultDB"
+			],
+			[
+				"data",
+				"dataCache"
+			],
+			[
+				"model",
+				"modelId"
+			],
+			[
+				"op",
+				"op_query"
+			],
+			[
+				"setter",
+				"setterPrefixStr"
+			],
+			[
+				"mod",
+				"modelHelper"
+			],
+			[
+				"even",
+				"even_ones"
+			],
+			[
+				"i_",
+				"i_1"
+			],
+			[
+				"show_",
+				"show_int"
+			],
+			[
+				"show",
+				"show_bytes"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"rea",
+				"readdir"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitignore",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/browser.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/bootstrap.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/home.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/reader.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/config.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/skeleton.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/layout.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/startup",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app_startup",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/index.js",
+		"/Users/liuyazhong/workspace/private_project/c/os_fork.c",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/config.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/main.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express/lib/express.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/test.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-monitor/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-monitor/readme.md",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/viewer.html",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/pdf-test.html",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/viewer.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbHelper.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/frames/1.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mongodb.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mysql.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/modelsHelper.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbCacheHelper.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/package.json",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/user.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/reader.jade",
+		"/Users/liuyazhong/workspace/private_project/c/test_negation_operation_0.c",
+		"/Users/liuyazhong/workspace/private_project/web/digtal-papers/routes/index.js",
+		"/Users/liuyazhong/Desktop/Computer Sicence/Bit/《深入理解计算机系统》第二章.note",
+		"/Users/liuyazhong/Desktop/Front-end/HTML/xhtml1-strict.dtd",
+		"/Users/liuyazhong/workspace/newland/Vicky-House/index.html",
+		"/Users/liuyazhong/workspace/private_project/web/digtal-papers/public/js/main.js",
+		"/Users/liuyazhong/workspace/private_project/web/digtal-papers/assets/css/:* library.css *:",
+		"/Users/liuyazhong/workspace/private_project/c/test_0.c",
+		"/Users/liuyazhong/SVN/neweraHPC/trunk/newerahpc2/test_xhtml1_0.html",
+		"/Users/liuyazhong/workspace/newland/yorkie/README.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"btoa",
+			"var MessageHandler",
+			"/var MessageHandler/",
+			"workerSrc",
+			"combineUrl",
+			"getDocume",
+			"PDFImage",
+			"Promise",
+			"DEFAULT_URL",
+			"WorkerSrc",
+			"build/pdf.js",
+			"build/",
+			"build",
+			"区块"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 199.0,
+	"status_bar_visible": true
+}

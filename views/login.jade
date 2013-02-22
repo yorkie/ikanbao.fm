@@ -4,7 +4,7 @@ block append head
   
   style
 
-    form {
+    .login-form {
       -webkt-border-radius: 6px;
         -moz-border-radius: 6px;
           -o-border-radius: 6px;
@@ -15,7 +15,7 @@ block append head
       width: 100%;
     }
 
-    form input {
+    .login-form input {
       width:  95%;
       margin-top: 5px;
     }
@@ -26,7 +26,7 @@ block append head
  
     /* Landscape phones and down */
     @media (max-width: 480px) {
-      form {
+      .login-form {
         margin-top: 20px;
         padding: 20px;
         width: 85%;
@@ -42,7 +42,7 @@ block append head
 block append content
 
   div.login-container.container
-    form(method='post', action='/login/')
+    form.login-form(method='post', action='/login/')
       fieldset
         legend 登陆{AppName}
         label  

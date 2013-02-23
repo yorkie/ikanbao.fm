@@ -176,10 +176,18 @@
 	"buffers":
 	[
 		{
+			"file": "views/welcomeAuthenticated.jade",
+			"settings":
+			{
+				"buffer_size": 1807,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "assets/scripts/index.js",
 			"settings":
 			{
-				"buffer_size": 579,
+				"buffer_size": 549,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +195,7 @@
 			"file": "assets/scripts/utils/fixed.js",
 			"settings":
 			{
-				"buffer_size": 3133,
+				"buffer_size": 2436,
 				"line_ending": "Unix"
 			}
 		}
@@ -216,6 +224,8 @@
 	},
 	"file_history":
 	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitignore",
@@ -225,8 +235,6 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/browser.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/bootstrap.css",
@@ -328,18 +336,46 @@
 			[
 				{
 					"buffer": 0,
-					"file": "assets/scripts/index.js",
+					"file": "views/welcomeAuthenticated.jade",
 					"settings":
 					{
-						"buffer_size": 579,
+						"buffer_size": 1807,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								517,
-								517
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 521.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/scripts/index.js",
+					"settings":
+					{
+						"buffer_size": 549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								543,
+								543
 							]
 						],
 						"settings":
@@ -354,19 +390,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "assets/scripts/utils/fixed.js",
 					"settings":
 					{
-						"buffer_size": 3133,
+						"buffer_size": 2436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								289,
-								289
+								51,
+								51
 							]
 						],
 						"settings":

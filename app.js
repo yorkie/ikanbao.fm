@@ -67,6 +67,7 @@ app.configure(function() {
     res.end(res.body)
   })
   app.get('/', routes.home)
+  app.get('/history/*', routes.history)
   app.get('/settings/*', routes.settings)
   app.get('/go/*', routes.go)
   app.get('/extend/*', routes.extend)

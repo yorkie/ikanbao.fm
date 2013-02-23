@@ -9,9 +9,24 @@ block append head
     .home-content {
       padding: 15px 0;
     }
+
     .home-sidebar {
       padding-top: 15px;
     }
+
+    
+    @media (min-width: 1200px) {
+      .home-sidebar .nav {
+        width: 170px;
+      }
+    }
+
+    @media (min-width: 980px) and (max-width: 1200px) {
+      .home-sidebar .nav {
+        width: 140px;
+      }
+    }
+
 
 block append content
 
@@ -19,30 +34,30 @@ block append content
     
     div.row
 
-      div#home-slider.home-sidebar.span2.offset1.hidden-phone
-        ul.nav.nav-pills.nav-stacked
+      div.home-sidebar.span2.offset1.hidden-phone
+        ul#home-sidebar.nav.nav-pills.nav-stacked
           li.active
-            a(href='#')
+            a(href='/')
               i.icon-home.icon-white.pull-right
               | yorkie
           li
-            a(href='#')
+            a(href='/history/')
               i.icon-book.pull-right
               | 历史记录
           li
-            a(href='#')
+            a(href='/groups/')
               i.icon-th-list.pull-right
               | 分类
           li
-            a(href='#')
+            a(href='/magazineEye/')
               i.icon-eye-open.pull-right
               | 发现
           li
-            a(href='#')
+            a(href='/subscribe/')
               i.icon-hdd.pull-right
               | 订阅
           li
-            a(href='#')
+            a(href='/settings/')
               i.icon-wrench.pull-right
               | 设置
 

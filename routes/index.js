@@ -2,10 +2,7 @@
 /* module dependencies */
 
 
-/* routers management */
-//exports.user = require('./user')
-//exports.reader = require('./reader')
-//exports.test = require('./test')
+
 
 /*
  * GET home page.

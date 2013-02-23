@@ -32,13 +32,9 @@ seajs.config({
 
 /* startup */
 
-seajs.use('utils/fixed', function(Fixed) {
+seajs.use(['utils/fixed'], function(Fixed) {
 	
-	$('#home-slider').on('click', function() {
-		console.log(1)
-	})
-
-	Fixed('#home-slider')
-
+	//$('#home-sidebar').affix()
+	Fixed('#home-sidebar', 20)
 
 })

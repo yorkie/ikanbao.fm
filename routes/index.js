@@ -17,6 +17,14 @@ exports.home = function(req, res) {
 }
 
 /**
+ * GET history
+ */
+
+exports.history = function(req, res) {
+	res.end('history')
+}
+
+/**
  * GET settings
  */
 

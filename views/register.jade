@@ -7,8 +7,43 @@ block append head
 		body {
 			position:relative;
 		}
+		.reg-container input {
+			width: 95%;
+		}
+
+		@media (max-width: 767px) {
+			.reg-container .page-header h1 {
+				font-size: 2em;
+			}
+		}
 
 block append content
 
-	//div.reg-container.container
-		
+	div.reg-container.container
+		div.row
+			
+			div.span12.page-header
+				h1 加入iKanbao.fm
+
+		div.row
+
+			div.span5
+				form
+					legend 新建个人帐户
+					label
+						| 用户名
+						input(type='text')
+					label
+						| 电子邮箱
+						input(type='text')
+					label
+						| 密码
+						input(type='password')
+					label
+						| 重复输入密码
+						input(type='password')
+					p
+						button.btn.btn-success(type='submit') 创建帐号
+
+			div.span6.offset1.hidden-phone
+				img(data-src='holder.js/570x320')

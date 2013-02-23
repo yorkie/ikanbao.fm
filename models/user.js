@@ -28,7 +28,7 @@ Models.define('User', function(out, db, cache) {
 		})
 		var me = db.model('yorkie', PersonSchema)
 
-		cache.username = 'Yorkie'
+		cache.username = username || 'Yorkie'
 		cache.password = 'test'
 		cache.nickname = ''
 	}

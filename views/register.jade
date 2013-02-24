@@ -28,22 +28,22 @@ block append content
 		div.row
 
 			div.span5
-				form
+				form(action='/register/', method='post')
 					legend 新建个人帐户
 					label
 						| 用户名
-						input(type='text')
+						input(tabindex='1', type='text', name='username', value='')
 					label
 						| 电子邮箱
-						input(type='text')
+						input(tabindex='2', type='text', name=loginFormFieldName, value='')
 					label
 						| 密码
-						input(type='password')
+						input(tabindex='3', type='password', name=passwordFormFieldName, value='')
 					label
 						| 重复输入密码
-						input(type='password')
+						input(tabindex='4', type='password', name='comfirmPassword', value='')
 					p
-						button.btn.btn-success.btn-large(type='submit') 创建帐号
+						button.btn.btn-success.btn-large(tabindex='5', type='submit') 创建帐号
 
 			div.span6.offset1.hidden-phone
 				img(data-src='holder.js/570x320')

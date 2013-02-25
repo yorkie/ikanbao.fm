@@ -1,17 +1,9 @@
-
-/* modular dependency */
-var Fiber = require('fibers')
-var Future = require('fibers/future')
-var wait = Future.wait
-
 /* define a model 'User' */
 Models.define('User', function(out, db, cache) {
 
-	// if u wanna use specilized db, such as mysql, u can declear by this.
-	db.use('mysql', function(db) {
-		// body
-		//console.log(db)
-	})
+	// define variables
+	var TIMEOUT = 3000
+	var connectionStr = 'mongodb://127.0.0.1:27017/LashDB'
 
 	// define Models
 	var UserSchema = new db.Schema({
@@ -44,17 +36,6 @@ Models.define('User', function(out, db, cache) {
 	}
 
 	// define getter
-	out.all = function() {
-		var fiber;
-		db.connect('mongodb://127.0.0.1:27017/LashDB')
-		fiber = Fiber(function() {
-			var Find = Future.wrap(User.find.bind(User), 0)
-			var result = Find().wait()
-			console.log(result)
-			//Fiber.yield(result)
-		})
-		return fiber.run()
-	}
 	out.username = function() {
 		return cache.username
 	}
@@ -80,6 +61,19 @@ Models.define('User', function(out, db, cache) {
 	out.forTestOtherOperators = function() {
 		//db.connect('db')
 	}
+
+
+	db.use('mongolian', function(Mongolian) {
+
+		var server = new Mongolian()
+		var db;
+
+		out.login = function() {
+			db = server.db('LashDB')
+			console.log(db.collection('users').find())
+		}
+	})
+
 
 
 	return;

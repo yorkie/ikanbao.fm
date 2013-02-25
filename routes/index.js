@@ -1,7 +1,9 @@
 
 /* module dependencies */
 
-
+function AsyncTestcase (fn) {
+	fn()
+}
 
 
 /*
@@ -21,7 +23,9 @@ exports.home = function(req, res) {
  */
 
 exports.history = function(req, res) {
-	res.end('history')
+	AsyncTestcase(function() {
+		res.end('DONE')
+	})
 }
 
 /**

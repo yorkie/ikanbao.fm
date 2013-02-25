@@ -8,33 +8,41 @@ Models.define('User', function(out, db, cache) {
 		//console.log(db)
 	})
 
+	// define Models
+	var UserSchema = new db.Schema({
+		username: String,
+		password: String,
+		nickname: String
+	})
+	var User = db.model('User', UserSchema)
+
 	// constructor
 	out._constructor = function(username) {
 
-		// connect to the special database for querying...
-		/*
-		db.connect('db').query('query tables', function(doc) {
-			username = doc.username
-			password = doc.password
-			nickname = doc.nickname
-		})
-		*/
-		db.createConnection('mongodb://127.0.0.1:27017/test')
-
-		var PersonSchema = new db.Schema({
-			username: String,
-			password: String,
-			nickname: String
-		})
-		var me = db.model('yorkie', PersonSchema)
 
 		cache.username = username || 'Yorkie'
 		cache.password = 'test'
 		cache.nickname = ''
+
+		/*
+		var yorkie = new User({
+			username: 'yorkie',
+			password: 'lyz900422',
+			nickname: 'nick'
+		})
+
+		yorkie.save(function(err) {
+			console.log(arguments)
+		})
+		*/
+
 	}
 
 
 	// define getter
+	out.all = function() {
+		console.log(User.find())
+	}
 	out.username = function() {
 		return cache.username
 	}

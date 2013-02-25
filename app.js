@@ -5,15 +5,13 @@
 
 var 
   express = require('express'),
-  http = require('http'),
   path = require('path'),
   util = require('util'),
   combo = require('combo'),
   models = require('express-model'),
   routes = require('./routes'),
   auth = require('./lib/auth'),
-  handlers = require('./lib/handlers'),
-  db = require('./lib/db')
+  bootstrap = require('./lib/bootstrap')
 
 var 
   app = express(),
@@ -97,10 +95,5 @@ app.configure('development', function(){
   app.use(express.errorHandler())
 })
 
-/* 启动HTTP服务器 */
-http.createServer(app).listen(app.get('port'), function() {
-  console.log(util.format('Express server runs on PORT:%s,\n - Please press ENTER to stop the running server - !', app.get('port')))
-})
-
-/* 启动数据库服务器　*/
-db.createServer()
+// 启动其他服务
+bootstrap.init()

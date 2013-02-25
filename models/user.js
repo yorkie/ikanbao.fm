@@ -1,21 +1,21 @@
+var Fiber = require('fibers')
+
 /* define a model 'User' */
-Models.define('User', function(out, db, cache) {
+Models.define('User', function(out, Db, cache) {
 
 	// define variables
-	var TIMEOUT = 3000
 	var connectionStr = 'mongodb://127.0.0.1:27017/LashDB'
 
 	// define Models
-	var UserSchema = new db.Schema({
+	var UserSchema = new Db.Schema({
 		username: String,
 		password: String,
 		nickname: String
 	})
-	var User = db.model('User', UserSchema)
+	var User = Db.model('User', UserSchema)
 
 	// constructor
 	out._constructor = function(username) {
-
 
 		cache.username = username || 'Yorkie'
 		cache.password = 'test'
@@ -57,23 +57,14 @@ Models.define('User', function(out, db, cache) {
 		//db.connect('db').update('nickname', nickname)
 	}
 
-	// define others
-	out.forTestOtherOperators = function() {
-		//db.connect('db')
+	// login
+	out.login = function(username, password, fn) {
+		
 	}
+	// register
+	out.register = function(user, fn) {
 
-
-	db.use('mongolian', function(Mongolian) {
-
-		var server = new Mongolian()
-		var db;
-
-		out.login = function() {
-			db = server.db('LashDB')
-			console.log(db.collection('users').find())
-		}
-	})
-
+	}
 
 
 	return;

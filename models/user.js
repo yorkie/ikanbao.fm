@@ -5,6 +5,7 @@ Models.define('User', function(out, Db, cache) {
 
 	// define variables
 	var connectionStr = 'mongodb://127.0.0.1:27017/LashDB'
+	var nextUserId = 0
 
 	// define Models
 	var UserSchema = new Db.Schema({
@@ -18,7 +19,10 @@ Models.define('User', function(out, Db, cache) {
 	out._constructor = function(username, password) {
 
 		var user = flashDB.users[username]
-		if (user) {
+		if (user && user.password === password) {
+			cache.username = user.username
+			cache.nickname = user.nickname
+			cache.password = user.password
 			out.isAuthenticated = true
 		}
 		return out
@@ -27,7 +31,9 @@ Models.define('User', function(out, Db, cache) {
 
 	out.toJSON = function() {
 		return {
-			username: cache.username,
+			id: ++nextUserId,
+			login: cache.username,
+			password: cache.password,
 			nickname: cache.nickname
 		}
 	}

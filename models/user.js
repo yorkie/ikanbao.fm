@@ -1,4 +1,4 @@
-var Fiber = require('fibers')
+var flashDB = require('../lib/db/flashDB')
 
 /* define a model 'User' */
 Models.define('User', function(out, Db, cache) {
@@ -15,24 +15,21 @@ Models.define('User', function(out, Db, cache) {
 	var User = Db.model('User', UserSchema)
 
 	// constructor
-	out._constructor = function(username) {
+	out._constructor = function(username, password) {
 
-		cache.username = username || 'Yorkie'
-		cache.password = 'test'
-		cache.nickname = ''
+		var user = flashDB.users[username]
+		if (user) {
+			out.isAuthenticated = true
+		}
+		return out
 
-		/*
-		var yorkie = new User({
-			username: 'yorkie',
-			password: 'lyz900422',
-			nickname: 'nick'
-		})
+	}
 
-		yorkie.save(function(err) {
-			console.log(arguments)
-		})
-		*/
-
+	out.toJSON = function() {
+		return {
+			username: cache.username,
+			nickname: cache.nickname
+		}
 	}
 
 	// define getter
@@ -59,7 +56,7 @@ Models.define('User', function(out, Db, cache) {
 
 	// login
 	out.login = function(username, password, fn) {
-		
+		return flashDB.users[username]
 	}
 	// register
 	out.register = function(user, fn) {

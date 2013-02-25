@@ -1,4 +1,9 @@
 
+/* modular dependency */
+var Fiber = require('fibers')
+var Future = require('fibers/future')
+var wait = Future.wait
+
 /* define a model 'User' */
 Models.define('User', function(out, db, cache) {
 
@@ -38,10 +43,17 @@ Models.define('User', function(out, db, cache) {
 
 	}
 
-
 	// define getter
 	out.all = function() {
-		console.log(User.find())
+		var fiber;
+		db.connect('mongodb://127.0.0.1:27017/LashDB')
+		fiber = Fiber(function() {
+			var Find = Future.wrap(User.find.bind(User), 0)
+			var result = Find().wait()
+			console.log(result)
+			//Fiber.yield(result)
+		})
+		return fiber.run()
 	}
 	out.username = function() {
 		return cache.username

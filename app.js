@@ -45,17 +45,13 @@ app.configure(function() {
   function localsHandler(req, res, next) {
     res.locals.loginFormFieldName = auth.password.loginFormFieldName()
     res.locals.passwordFormFieldName = auth.password.passwordFormFieldName()
-    res.locals.user = {
-      isAuthenticated: false,
-    }
+    res.locals.user = { isAuthenticated: false }
     next()
   }
 
   function afterAuthenticatedHandler(req, res, next) {
     if (req.user) {
-      res.locals.user.isAuthenticated = true
-      res.locals.user.name = req.user.login
-      res.locals.user.id = req.user.id
+      res.locals.user = req.user
     }
     next()
   }

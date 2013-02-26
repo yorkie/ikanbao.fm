@@ -32,9 +32,9 @@ Models.define('User', function(out, Db, cache) {
 	out.toJSON = function() {
 		return {
 			id: ++nextUserId,
-			login: cache.username,
-			password: cache.password,
-			nickname: cache.nickname
+			name: cache.username,
+			nick: cache.nickname,
+			isAuthenticated: out.isAuthenticated
 		}
 	}
 

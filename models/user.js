@@ -9,9 +9,11 @@ Models.define('User', function(out, Db, cache) {
 
 	// define Models
 	var UserSchema = new Db.Schema({
+		email: String,
 		username: String,
 		password: String,
-		nickname: String
+		role: String,
+		mask: String
 	})
 	var User = Db.model('User', UserSchema)
 
@@ -61,12 +63,16 @@ Models.define('User', function(out, Db, cache) {
 	}
 
 	// login
-	out.login = function(username, password, fn) {
+	out.login = function(username, password) {
 		return flashDB.users[username]
 	}
 	// register
-	out.register = function(user, fn) {
-
+	out.register = function(user) {
+		if (!user.username) {
+			throw 'Type Error'
+		}
+		flashDB.users[user.username] = new User(user)
+		console.log(flashDB.users[user.username])
 	}
 
 

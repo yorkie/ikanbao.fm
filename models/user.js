@@ -56,13 +56,17 @@ Models.define('User', function(out, Db, cache) {
 		if (!user.username) {
 			throw 'Type Error'
 		}
-		flashDB.users[name] = new User({
+		flashDB.users[name] = {
 			name: 		name,
 			email: 		email,
 			password: password,
 			role: 		0
+		}
+		User.create(flashDB.users[name], function(err, user) {
+			if (err) throw 'Type Error'
+			// body
 		})
-		
+		return flashDB.users[name]
 	}
 
 

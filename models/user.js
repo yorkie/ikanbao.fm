@@ -4,7 +4,8 @@ var flashDB = require('flashDB')
 Models.define('User', function(out, Db, cache) {
 
 	// define variables
-	var connectionStr = 'mongodb://127.0.0.1:27017/LashDB'
+	var connStr = 'mongodb://127.0.0.1:27017/LashDB'
+	var db = {}
 	var nextUserId = 0
 
 	// define Models
@@ -15,7 +16,7 @@ Models.define('User', function(out, Db, cache) {
 		role: String				// auto generated or assigned by Yorkie
 	})
 	UserSchema.index({ name: 1, role: 1 })
-	var User = Db.model('User', UserSchema)
+	Db.model('User', UserSchema)
 
 	// constructor
 	out._constructor = function(name, password) {
@@ -47,26 +48,18 @@ Models.define('User', function(out, Db, cache) {
 	// define setter
 	
 
-	// login
-	out.login = function(username, password) {
-		return flashDB.users[username]
-	}
-	// register
-	out.register = function(name, email, password) {
-		if (!user.username) {
-			throw 'Type Error'
-		}
-		flashDB.users[name] = {
-			name: 		name,
-			email: 		email,
-			password: password,
-			role: 		0
-		}
-		User.create(flashDB.users[name], function(err, user) {
+	/**
+	 * add a user
+	 * @param user
+	 */
+
+	out.add = function(user) {
+		db = Db.createConnection(connStr)
+		db.model('User').create(user, function(err, user) {
 			if (err) throw 'Type Error'
-			// body
+			db.close()
 		})
-		return flashDB.users[name]
+		return user
 	}
 
 

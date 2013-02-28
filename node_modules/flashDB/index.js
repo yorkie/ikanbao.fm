@@ -19,6 +19,7 @@ var globalFlashPool = {}
 var FlashSegment = function(name, keys) {
 	this.name = name
 	this.keys = keys
+	this.defaultKey = keys[0]
 	this.freelist = [0]
 	this.pointers = {}
 	globalFlashPool[name] = []
@@ -32,10 +33,17 @@ var FlashSegment = function(name, keys) {
  */
 
 FlashSegment.prototype.get = function(key, by) {
-	var ii = -1
+	var ii
 	by = by || this.defaultKey
-	ii = this.pointers[by][key]
-	return globalFlashPool[this.name][ii]
+	ii = this.pointers[by]
+	if (ii) {
+		// ii[key] must be a Number
+		ii = ii[key] + 1
+	}
+	if (ii) {
+		return globalFlashPool[this.name][ii - 1]
+	}
+	return false
 }
 
 /**
@@ -43,22 +51,19 @@ FlashSegment.prototype.get = function(key, by) {
  * @param value
  */
 
-FlashSegment.prototype.set = function(value) {
+FlashSegment.prototype.add = function(value) {
 	var i = this.freelist[0]
 	this.freelist = [i + 1]
 	globalFlashPool[this.name][i] = value
 
 	for (var j=0; j<this.keys.length; j++) {
 		var key = this.keys[j]
-		if (j === 0) {
-			this.defaultKey = key
-		}
 		if (!this.pointers[key]) {
 			this.pointers[key] = {}
 		}
 		this.pointers[key][value[key]] = i
 	}
-	return this
+	return true
 }
 
 

@@ -1,4 +1,4 @@
-var flashDB = require('../lib/db/flashDB')
+var flashDB = require('flashDB')
 
 /* define a model 'User' */
 Models.define('User', function(out, Db, cache) {

@@ -61,13 +61,6 @@ FlashSegment.prototype.set = function(value) {
 	return this
 }
 
-/**
- * isExisted
- */
-
-FlashSegment.prototype.isExisted = function(flashLike) {
-	// TODO
-}
 
 /**
  * Export

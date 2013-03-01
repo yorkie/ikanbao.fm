@@ -296,34 +296,10 @@
 	"buffers":
 	[
 		{
-			"file": "lib/auth/index.js",
+			"file": ".gitmodules",
 			"settings":
 			{
-				"buffer_size": 2093,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lib/auth/utils.js",
-			"settings":
-			{
-				"buffer_size": 1148,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "models/user.js",
-			"settings":
-			{
-				"buffer_size": 1311,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "lib/bootstrap.js",
-			"settings":
-			{
-				"buffer_size": 744,
+				"buffer_size": 107,
 				"line_ending": "Unix"
 			}
 		}
@@ -352,16 +328,20 @@
 	},
 	"file_history":
 	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/README.md",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/package.json",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/utils.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/flashDB.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/mongodb.conf",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/lib/modules/everymodule.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
@@ -484,106 +464,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "lib/auth/index.js",
+					"file": ".gitmodules",
 					"settings":
 					{
-						"buffer_size": 2093,
+						"buffer_size": 107,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								984,
-								984
+								107,
+								107
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 579.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "lib/auth/utils.js",
-					"settings":
-					{
-						"buffer_size": 1148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								706,
-								706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 203.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "models/user.js",
-					"settings":
-					{
-						"buffer_size": 1311,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								869,
-								869
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "lib/bootstrap.js",
-					"settings":
-					{
-						"buffer_size": 744,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								650,
-								650
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

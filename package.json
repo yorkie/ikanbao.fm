@@ -2,12 +2,12 @@
   "name": "ikanbao.fm",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node app"
-  },
   "dependencies": {
+    "combo": "0.2.0",
+    "everyauth": "0.2.34",
     "express": "3.0.6",
-    "express-model": "0.0.1"
-    "jade": "*"
+    "express-model": "0.0.1",
+    "jade": "*",
+    "flashdb": "1.0.0"
   }
 }

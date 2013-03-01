@@ -10,6 +10,12 @@ As you know, you could use `memcached` for replacing `flashDB`.
 That's all right, It's powerful, sophisticated develop tool, but if you use flashDB, it's more light, more fast and more close to you.  
 Here is a case, you need build an authenticate system, programmers should move the table `auth` or related stuff to the CPU/RAM of servers at the startup stage, so it's long for a local/fast database system especially a more complexed authenticate needed process.
 
+## Getting Started
+
+```
+$ npm install flashdb
+```
+
 ## API, It's very KISS
 
 ### .create(name, keys)

@@ -1,0 +1,24 @@
+{
+  "name": "flashdb",
+  "description": "A database system for providing a local, fast, convenient accessor, which can query, extend and remove.",
+  "version": "1.0.0",
+  "author": "Yorkie Nell <l900422@vip.qq.com>",
+  "contributors": [
+    {
+      "name": "Yorkie Nell",
+      "email": "l900422@vip.qq.com"
+    }
+  ],
+  "dependencies": {
+    
+  },
+  "keywords": [
+    "store",
+    "in-memory"
+  ],
+  "repository": "git://github.com/yorkie/flashDB",
+  "main": "index",
+  "engines": {
+    "node": "*"
+  }
+}

@@ -299,7 +299,7 @@
 			"file": ".gitmodules",
 			"settings":
 			{
-				"buffer_size": 107,
+				"buffer_size": 94,
 				"line_ending": "Unix"
 			}
 		}
@@ -328,6 +328,7 @@
 	},
 	"file_history":
 	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/README.md",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/package.json",
@@ -367,7 +368,6 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header-new.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
@@ -467,15 +467,15 @@
 					"file": ".gitmodules",
 					"settings":
 					{
-						"buffer_size": 107,
+						"buffer_size": 94,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								107,
-								107
+								50,
+								50
 							]
 						],
 						"settings":

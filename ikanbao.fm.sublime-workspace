@@ -4,6 +4,134 @@
 		"selected_items":
 		[
 			[
+				"pass",
+				"password"
+			],
+			[
+				"conn",
+				"connection"
+			],
+			[
+				"p",
+				"pointers"
+			],
+			[
+				"free",
+				"freelist"
+			],
+			[
+				"glo",
+				"globalFlashPool"
+			],
+			[
+				"fl",
+				"FlashSegment"
+			],
+			[
+				"flash",
+				"flashBlocksPool"
+			],
+			[
+				"auth",
+				"authUtils"
+			],
+			[
+				"encode",
+				"encodePassword"
+			],
+			[
+				"__",
+				"__user__"
+			],
+			[
+				"id",
+				"idAccess"
+			],
+			[
+				"user",
+				"usersById"
+			],
+			[
+				"find",
+				"findUserById_function"
+			],
+			[
+				"eve",
+				"everyModule"
+			],
+			[
+				"every",
+				"everyModule"
+			],
+			[
+				"ever",
+				"everyModule"
+			],
+			[
+				"mon",
+				"mongolian"
+			],
+			[
+				"exec",
+				"exec_mongodSync"
+			],
+			[
+				"future",
+				"Future"
+			],
+			[
+				"fUT",
+				"Future"
+			],
+			[
+				"exe",
+				"exec_http"
+			],
+			[
+				"arg",
+				"arguments"
+			],
+			[
+				"fut",
+				"future"
+			],
+			[
+				"fI",
+				"Find"
+			],
+			[
+				"E",
+				"extendVal"
+			],
+			[
+				"futu",
+				"Future"
+			],
+			[
+				"db",
+				"dbInstance"
+			],
+			[
+				"fUN",
+				"Function"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"ob",
+				"Object"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
 				"vis",
 				"visualElem"
 			],
@@ -12,16 +140,8 @@
 				"fixed"
 			],
 			[
-				"auth",
-				"authenticationMiddleware"
-			],
-			[
 				"is",
 				"isAuthenticated"
-			],
-			[
-				"user",
-				"userId"
 			],
 			[
 				"wel",
@@ -176,26 +296,34 @@
 	"buffers":
 	[
 		{
-			"file": "views/welcomeAuthenticated.jade",
+			"file": "lib/auth/index.js",
 			"settings":
 			{
-				"buffer_size": 1807,
+				"buffer_size": 2093,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/scripts/index.js",
+			"file": "lib/auth/utils.js",
 			"settings":
 			{
-				"buffer_size": 549,
+				"buffer_size": 1148,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/scripts/utils/fixed.js",
+			"file": "models/user.js",
 			"settings":
 			{
-				"buffer_size": 2436,
+				"buffer_size": 1311,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/bootstrap.js",
+			"settings":
+			{
+				"buffer_size": 744,
 				"line_ending": "Unix"
 			}
 		}
@@ -224,34 +352,56 @@
 	},
 	"file_history":
 	[
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/flashDB.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/mongodb.conf",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitignore",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/lib/modules/everymodule.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbHelper.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/mysql.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/mongoose.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/mongolian.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mongolian.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mysql.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mongoose.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mongo-sync.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/server-storage.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/bootstrap.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/fibers/future.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/index.js",
+		"/Users/liuyazhong/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/liuyazhong/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitignore",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.index.js.swp",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header-new.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/browser.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/bootstrap.css",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/home.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/reader.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/config.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/skeleton.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/startup",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app_startup",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/index.js",
 		"/Users/liuyazhong/workspace/private_project/c/os_fork.c",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/config.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/main.js",
@@ -259,15 +409,11 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/test.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-monitor/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-monitor/readme.md",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/viewer.html",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/pdf-test.html",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/test/viewer.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbHelper.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/frames/1.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mongodb.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/supportDB/mysql.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/modelsHelper.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbCacheHelper.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/package.json",
@@ -300,6 +446,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"//,",
+			"Indentation",
 			"btoa",
 			"var MessageHandler",
 			"/var MessageHandler/",
@@ -331,51 +479,78 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/welcomeAuthenticated.jade",
+					"file": "lib/auth/index.js",
 					"settings":
 					{
-						"buffer_size": 1807,
+						"buffer_size": 2093,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								574,
-								574
+								984,
+								984
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 521.0,
+						"translation.y": 579.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "assets/scripts/index.js",
+					"file": "lib/auth/utils.js",
 					"settings":
 					{
-						"buffer_size": 549,
+						"buffer_size": 1148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								543,
-								543
+								706,
+								706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 203.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/user.js",
+					"settings":
+					{
+						"buffer_size": 1311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
 							]
 						],
 						"settings":
@@ -390,26 +565,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "assets/scripts/utils/fixed.js",
+					"buffer": 3,
+					"file": "lib/bootstrap.js",
 					"settings":
 					{
-						"buffer_size": 2436,
+						"buffer_size": 744,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
+								650,
+								650
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -426,7 +600,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -480,6 +654,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 199.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true
 }

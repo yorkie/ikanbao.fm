@@ -295,14 +295,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": ".gitmodules",
-			"settings":
-			{
-				"buffer_size": 94,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -328,6 +320,7 @@
 	},
 	"file_history":
 	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitmodules",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/README.md",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/index.js",
@@ -459,35 +452,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".gitmodules",
-					"settings":
-					{
-						"buffer_size": 94,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								50,
-								50
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

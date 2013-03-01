@@ -1,6 +1,3 @@
-[submodule "flashDB"]
-	path = node_modules/flashDB
-	url  = git://github.com/yorkie/flashDB.git
 [submodule "node_modules/flashDB"]
 	path = node_modules/flashDB
 	url = git://github.com/yorkie/FlashDB.git

@@ -67,16 +67,16 @@ div.header
             a.btn(href='/login/') 登陆
         else if user.id > 0
           div.btn-group
-            a.btn(href='#')
+            a.btn(href='/#{user.name}')
               i.icon-user.icon-gray
               =user.name
             a.btn.dropdown-toggle(data-toggle='dropdown')
               span.caret
             ul.dropdown-menu
               li
-                a(href='/yorkie/post/') 发表
+                a(href='/#{user.name}/post/') 发表
               li
-                a(href='/yorkie/') 个人中心
+                a(href='/#{user.name}/') 个人中心
               li
                 a 主编中心
               li.divider

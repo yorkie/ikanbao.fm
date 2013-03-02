@@ -1,83 +1,26 @@
 
 //- Welcome Authenticated
-extend shared/skeleton
+extend shared/sidebar-and-content
 
 block append head
 
   style
 
-    .home-content {
-      padding: 15px 0;
-    }
-
-    .home-sidebar {
-      padding-top: 15px;
-    }
-
-    .home-sidebar .nav {
-      width: 104px;
-    }
-
-
-    @media (min-width: 1200px) {
-      .home-sidebar .nav {
-        width: 170px;
-      }
-    }
-
-    @media (min-width: 980px) and (max-width: 1200px) {
-      .home-sidebar .nav {
-        width: 140px;
-      }
-    }
-
 
 block append content
 
-  div.home-container.container
-    
-    div.row
-
-      div.home-sidebar.span2.offset1.hidden-phone
-        ul#home-sidebar.nav.nav-pills.nav-stacked
-          li.active
-            a(href='/')
-              i.icon-home.icon-white.pull-right
-              =user.name
-          li
-            a(href='/history/')
-              i.icon-book.pull-right
-              | 历史记录
-          li
-            a(href='/groups/')
-              i.icon-th-list.pull-right
-              | 分类
-          li
-            a(href='/magazineEye/')
-              i.icon-eye-open.pull-right
-              | 发现
-          li
-            a(href='/subscribe/')
-              i.icon-hdd.pull-right
-              | 订阅
-          li
-            a(href='/settings/')
-              i.icon-wrench.pull-right
-              | 设置
-
-      div.home-content.span7
         
-        -var users = [1, 2, 3, 4, 5, 6, 7]
+  -var users = [1, 2, 3, 4, 5, 6, 7]
 
-        for user in users
-          div.media
-            a.pull-left.hidden-phone(href='#')
-              img.media-object(data-src='holder.js/64x64')
-            div.media-body
-              h4.media-heading 
-                a(href='#') Media heading
-              div.media
-                p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  for user in users
+    div.media
+      a.pull-left.hidden-phone(href='#')
+        img.media-object(data-src='holder.js/64x64')
+      div.media-body
+        h4.media-heading 
+          a(href='#') Media heading
+        div.media
+          p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 
 
 

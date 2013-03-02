@@ -33,7 +33,7 @@ exports.history = function(req, res) {
  */
 
 exports.settings = function(req, res) {
-	res.end('settings')
+	res.render('settings')
 }
 
 /**

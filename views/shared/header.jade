@@ -60,16 +60,16 @@ div.header
             input(type='text', placeholder='搜索报刊/主编')
         
       div.header-right.span3.offset1.hidden-phone
-        if user.isAuthenticated == false
+        if !user.id
           div.btn-group
             a.btn.btn-success(href='/register/') 免费注册
           div.btn-group
             a.btn(href='/login/') 登陆
-        else
+        else if user.id > 0
           div.btn-group
             a.btn(href='#')
               i.icon-user.icon-gray
-              =user.nick
+              =user.name
             a.btn.dropdown-toggle(data-toggle='dropdown')
               span.caret
             ul.dropdown-menu

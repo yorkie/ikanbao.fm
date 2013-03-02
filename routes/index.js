@@ -1,11 +1,4 @@
 
-/* module dependencies */
-
-function AsyncTestcase (fn) {
-	fn()
-}
-
-
 /*
  * GET home page.
  */
@@ -23,9 +16,8 @@ exports.home = function(req, res) {
  */
 
 exports.history = function(req, res) {
-	AsyncTestcase(function() {
-		res.end('DONE')
-	})
+	res.locals.page.name = 'history'
+	res.end('history')
 }
 
 /**
@@ -33,6 +25,7 @@ exports.history = function(req, res) {
  */
 
 exports.settings = function(req, res) {
+	res.locals.page.name = 'settings'
 	res.render('settings')
 }
 

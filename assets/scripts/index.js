@@ -34,7 +34,6 @@ seajs.config({
 
 seajs.use(['utils/fixed'], function(Fixed) {
 	
-	//$('#home-sidebar').affix()
 	Fixed('#home-sidebar', 20)
 
 })

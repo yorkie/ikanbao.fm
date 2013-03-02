@@ -3,7 +3,6 @@
 
 extends skeleton
 
-
 block append Head
 
 	link(rel='stylesheet', href='/css/sidebar-and-content.css')
@@ -21,23 +20,23 @@ block append Content
 						a(href='/')
 							i.icon-home.icon-white.pull-right
 							=user.name
-					li
+					li#history
 						a(href='/history/')
 							i.icon-book.pull-right
 							| 历史记录
-					li
+					li#groups
 						a(href='/groups/')
 							i.icon-th-list.pull-right
 							| 分类
-					li
+					li#discovery
 						a(href='/magazineEye/')
 							i.icon-eye-open.pull-right
 							| 发现
-					li
+					li#subscribe
 						a(href='/subscribe/')
 							i.icon-hdd.pull-right
 							| 订阅
-					li
+					li#settings
 						a(href='/settings/')
 							i.icon-wrench.pull-right
 							| 设置
@@ -45,5 +44,23 @@ block append Content
 			.home-content.span7
 				block content
 
+			script
+				var activeNav = document.getElementById('#{page.name}')
+				var dft___Nav = document.getElementById('home-sidebar').children[0]
 
+				if (activeNav) {
+					dft___Nav.className = ''
+					activeNav.className = 'active'
 
+					var temp1 = dft___Nav.getElementsByTagName('i')[0]
+					var temp2 = activeNav.getElementsByTagName('i')[0]
+					temp1.classList ? 
+						(
+							temp1.classList.remove('icon-white'),
+							temp2.classList.add('icon-white')
+						):
+						(
+							temp1.className = temp1.className.replace('icon-white', ''),
+							temp2.className = temp2.className + ' icon-white'
+						)
+				}

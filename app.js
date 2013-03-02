@@ -46,6 +46,7 @@ app.configure(function() {
     res.locals.loginFormFieldName = auth.password.loginFormFieldName()
     res.locals.passwordFormFieldName = auth.password.passwordFormFieldName()
     res.locals.user = { isAuthenticated: false }
+    res.locals.page = {}
     next()
   }
 

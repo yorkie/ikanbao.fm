@@ -1,0 +1,42 @@
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #fcfcfc;
+  padding-top: 70px;
+}
+.header {
+  -webkit-box-shadow: 1px 1px 5px #eee;
+     -moz-box-shadow: 1px 1px 5px #eee;
+       -o-box-shadow: 1px 1px 5px #eee;
+          box-shadow: 1px 1px 5px #eee;
+  border-bottom:      1px solid #ccc;
+  background:                   #fff;
+  width: 100%;
+  position:absolute;
+  left:0;
+  top: 0;
+}
+.header-logo {
+  margin-right: 30px;
+}
+.header-container .row {
+  margin-top: 15px;
+}
+
+/* Landscape phones and down */
+@media (max-width: 767px) {
+  body {
+    padding-top: 0;
+  }
+  .header {
+    position: fixed;
+    bottom: 0px;
+    top: auto;
+    border: 0;
+  }
+  .header-phoneNavbar a.btn {
+    padding:20px 3% 20px 3%;
+    width: 28%;
+  }
+
+}

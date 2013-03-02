@@ -1,0 +1,13 @@
+.settings-form {
+	-webkit-border-radius: 4px;
+		 -moz-border-radius: 4px;
+			 -o-border-radius: 4px;
+			    border-radius: 4px;
+	-webkit-box-shadow: 1px 1px 5px #eee;
+		 -moz-box-shadow: 1px 1px 5px #eee;
+		   -o-box-shadow: 1px 1px 5px #eee;
+			    box-shadow: 1px 1px 5px #eee;
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 20px;
+}

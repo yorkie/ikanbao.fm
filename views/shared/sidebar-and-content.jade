@@ -1,47 +1,21 @@
 
 //- sidebar and content
 
-extend skeleton
+extends skeleton
 
 
 block append Head
 
-	style
-
-		.home-content {
-			padding: 15px 0;
-		}
-
-		.home-sidebar {
-			padding-top: 15px;
-		}
-
-		.home-sidebar .nav {
-			width: 104px;
-		}
-
-		@media (min-width: 1200px) {
-			.home-sidebar .nav {
-				width: 170px;
-			}
-		}
-
-		@media (min-width: 980px) and (max-width: 1200px) {
-			.home-sidebar .nav {
-				width: 140px;
-			}
-		}
-
+	link(rel='stylesheet', href='/css/sidebar-and-content.css')
 	block head
 
 
 block append Content
 
-	div.home-container.container
-    
-		div.row
+	.home-container.container
 
-			div.home-sidebar.span2.offset1.hidden-phone
+		.row
+			.home-sidebar.span2.offset1.hidden-phone
 				ul#home-sidebar.nav.nav-pills.nav-stacked
 					li.active
 						a(href='/')
@@ -68,7 +42,7 @@ block append Content
 							i.icon-wrench.pull-right
 							| 设置
 
-			div.home-content.span7
+			.home-content.span7
 				block content
 
 

@@ -1,13 +1,45 @@
 
 //- Settings
-extend shared/sidebar-and-content
+extends shared/sidebar-and-content
 
 block append head
 
-	style
+	link(rel='stylesheet', href='/css/settings.css')
 
 block append content
 
-	div.container
-		form
-			lengend hello
+	form.settings-form.form-horizontal.span7
+
+		legend 基本信息
+		.control-group
+			label.control-label 电子邮箱
+			.controls
+				.input-prepend
+					span.add-on
+						i.icon-envelope
+					input.span3(type='text', disabled='disabled', value='#{user.email}')
+		.control-group
+			label.control-label(for='username') 用户名
+			.controls
+				.input-prepend
+					span.add-on
+						i.icon-user
+					input#username.span3(type='text', value='#{user.name}')
+
+		legend 帐号安全
+		.btn-group
+			a.btn 重置
+			a.btn 修改密码
+		.btn-group
+			a.btn.btn-danger(href='#destoryAccountModal', role='button', data-toggle='modal') 销毁帐号
+
+	// 销毁帐号的Modal
+	#destoryAccountModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='', aria=hidden='true')
+		.modal-header
+			button.close(type='button', data-dismiss='modal', aria-hidden='true') x
+			h3#destoryAccoundModalLabel 销毁帐号
+		.modal-body
+			p @#{user.name}，你确定要销毁此帐号吗？
+		.modal-footer
+			button.btn(data-dismiss='modal', aria-hidden='true') 取消
+			button.btn.btn-inverse 确定以及肯定

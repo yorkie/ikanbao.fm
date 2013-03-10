@@ -1,0 +1,15 @@
+#kan {
+	padding: 30px 0;
+}
+
+#kan .control-group {
+	padding-top: 10px;
+}
+
+#kan .buttons {
+	text-align: center;
+}
+
+#kanCover {
+	cursor: pointer;
+}

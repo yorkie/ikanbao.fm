@@ -74,11 +74,16 @@ div.header
               span.caret
             ul.dropdown-menu
               li
-                a(href='/#{user.name}/post/') 发表
+                a(href='/post/#issue') 发布文章
+              li
+                a(href='/post/#kan') 创刊
+              li.divider
               li
                 a(href='/#{user.name}/') 个人主页
               li
-                a 主编中心
+                a(href='/#{user.name}/#kans') 我的报纸
+              li
+                a(href='/#{user.name}/#mysubscribe') 我的订阅
               li.divider
               li
                 a(href='/settings/') 设置

@@ -1,0 +1,61 @@
+
+extend shared/skeleton
+
+block append Head
+
+	link(rel='stylesheet', href='/css/post.css')
+
+block append Content
+
+	//- 1st Part: 创刊部分
+	#kan.row
+		.form-horizontal.span8.offset2
+			
+			legend 创建报刊
+			.control-group
+				label.control-label(for='kanName') 报刊名
+				.controls
+					.input-prepend
+						span.add-on
+							i.icon-book
+						input#kanName.span5(type='text', value='', placeholder='报刊名，如：南方周末、时尚巴莎等')
+			
+			.control-group
+				label.control-label(for='kanGroup') 分类
+				.controls
+					.input-prepend
+						span.add-on
+							i.icon-th-large
+						input#kanGroup.span5(type='text', value='', placeholder='选择分类')
+			
+			.control-group
+				label.control-label(for='kanTags') 标签
+				.controls
+					.input-prepend
+						span.add-on
+							i.icon-tags
+						input#kanTags.span5(type='text', value='', placeholder='报刊标签')
+			
+			.control-group
+				label.control-label(for='kanDescription') 描述
+				.controls
+					.input-prepend
+						span.add-on
+							i.icon-font
+						input#kanDescription.span5(type='text', value='', placeholder='250字以内的报刊描述')
+
+			.control-group
+				label.control-label(for='kanCover') 报刊封面
+				.controls
+					.input-prepend
+						span.add-on 图
+						input#kanCover.span5(type='text', value='', placeholder='报刊封面', disabled)
+
+			.control-group.buttons
+				.btn-group
+					a.btn.btn-large.disabled 预览
+				.btn-group
+					a.btn.btn-success.btn-large.disabled 创建
+
+block Module
+	script(src='/scripts/pages/post.js')

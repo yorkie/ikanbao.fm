@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"users",
+				"usersById"
+			],
+			[
+				"ub",
+				"ube"
+			],
+			[
 				"pass",
 				"password"
 			],
@@ -295,6 +303,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "views/shared/header.jade",
+			"settings":
+			{
+				"buffer_size": 2296,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/index.js",
+			"settings":
+			{
+				"buffer_size": 1286,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/shared/sidebar-and-content.jade",
+			"settings":
+			{
+				"buffer_size": 1476,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/scripts/index.js",
+			"settings":
+			{
+				"buffer_size": 519,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 2420,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -320,25 +368,35 @@
 	},
 	"file_history":
 	[
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/header.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/sidebar-and-content.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/sidebar-and-content.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/settings.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/settings.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/reader.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/utils.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitmodules",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/README.md",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/package.json",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/utils.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/flashDB.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/mongodb.conf",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/lib/modules/everymodule.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbHelper.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/mysql.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/mongoose.js",
@@ -350,23 +408,19 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/server-storage.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/bootstrap.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/fibers/future.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/index.js",
 		"/Users/liuyazhong/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/liuyazhong/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitignore",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.index.js.swp",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header-new.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/browser.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/bootstrap.css",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/home.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/reader.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated",
@@ -391,7 +445,6 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/dbCacheHelper.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/express-model/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/user.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/reader.jade",
 		"/Users/liuyazhong/workspace/private_project/c/test_negation_operation_0.c",
 		"/Users/liuyazhong/workspace/private_project/web/digtal-papers/routes/index.js",
 		"/Users/liuyazhong/Desktop/Computer Sicence/Bit/《深入理解计算机系统》第二章.note",
@@ -452,8 +505,146 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "views/shared/header.jade",
+					"settings":
+					{
+						"buffer_size": 2296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "routes/index.js",
+					"settings":
+					{
+						"buffer_size": 1286,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/shared/sidebar-and-content.jade",
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								869
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/scripts/index.js",
+					"settings":
+					{
+						"buffer_size": 519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 2420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1258,
+								1258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 430.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -517,6 +708,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 270.0,
+	"side_bar_width": 189.0,
 	"status_bar_visible": true
 }

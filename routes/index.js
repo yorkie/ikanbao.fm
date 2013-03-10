@@ -30,6 +30,22 @@ exports.settings = function(req, res) {
 }
 
 /**
+ * GET post
+ */
+
+exports.post = function(req, res) {
+	if (req.params.type == 'kan') {
+		res.render('post_kan')
+	}
+	else if (req.params.type == 'issue') {
+		res.render('post_issue')
+	}
+	else {
+		res.redirect(301, '/')
+	}
+}
+
+/**
  * GET go
  */
 

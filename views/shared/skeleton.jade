@@ -12,4 +12,7 @@ html
     block Content
       include header
 
-    script(src='/scripts/lib/sea.js', data-main='/scripts/index')
+    script(src='/scripts/lib/sea.js')
+    script(src='/scripts/sea-config.js')
+    block Module
+      script(src='/scripts/index.js')

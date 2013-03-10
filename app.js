@@ -65,6 +65,7 @@ app.configure(function() {
   app.get('/', routes.home)
   app.get('/history/*', routes.history)
   app.get('/settings/*', routes.settings)
+  app.get('/post/:type/', routes.post)
   app.get('/go/*', routes.go)
   app.get('/extend/*', routes.extend)
   app.get('/:username/', routes.user)

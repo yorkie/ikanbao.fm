@@ -34,6 +34,10 @@ exports.settings = function(req, res) {
  */
 
 exports.post = function(req, res) {
+
+	var group = Models.use('Group')
+	//console.log(group.test())
+
 	if (req.params.type == 'kan') {
 		res.render('post_kan')
 	}

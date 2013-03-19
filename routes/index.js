@@ -106,7 +106,7 @@ exports.issue = function(req, res) {
  */
 
 exports.api = function(req, res) {
-	res.end('api[post]')
+	require('./api').
 }
 
 

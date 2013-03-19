@@ -10,6 +10,10 @@
 	text-align: center;
 }
 
-#kanCover {
+#kanDescription, #kanCover {
 	cursor: pointer;
+}
+
+textarea {
+	width: 95%;
 }

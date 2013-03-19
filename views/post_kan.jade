@@ -26,7 +26,9 @@ block append Content
 					.input-prepend
 						span.add-on
 							i.icon-th-large
-						input#kanGroup.span5(type='text', value='', placeholder='选择分类', autocomplete='off')
+						select
+							for group in groups
+								option #{group}
 
 			.control-group
 				label.control-label(for='kanTags') 标签
@@ -49,13 +51,33 @@ block append Content
 				.controls
 					.input-prepend
 						span.add-on 图
-						input#kanCover.span5(type='text', value='', placeholder='报刊封面', disabled)
+						input#kanCover.span5(type='text', value='', placeholder='报刊封面')
 
 			.control-group.buttons
 				.btn-group
 					a.btn.btn-large.disabled 预览
 				.btn-group
 					a.btn.btn-success.btn-large.disabled 创建
+
+			#descriptionModal.modal.hide.fade
+				.modal-header
+					button.close(type='button', data-dismiss='modal') x
+					h3 添加描述（250字以内）
+				.modal-body
+					textarea
+				.modal-footer
+					button.btn(data-dismiss='modal') 关闭
+					button.btn.btn-primary 保存
+
+			#updateCoverModal.modal.hide.fade
+				.modal-header
+					button.close(type='button', data-dismiss='modal') x
+					h3 上传封面
+				.modal-body
+					textarea
+				.modal-footer
+					button.btn(data-dismiss='modal') 关闭
+					button.btn.btn-primary 保存
 
 block Module
 	script(src='/scripts/pages/post_kan.js')

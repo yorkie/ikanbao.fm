@@ -4,7 +4,7 @@
   "use strict"; // jshint ;_;
 
 
- /* POPOVER PUBLIC CLASS DEFINITION
+ /* SELECTOR PUBLIC CLASS DEFINITION
   * =============================== */
 
   var Selector = function (element, options) {
@@ -12,7 +12,7 @@
   }
 
 
-  /* NOTE: POPOVER EXTENDS BOOTSTRAP-TOOLTIP.js
+  /* NOTE: SELECT EXTENDS BOOTSTRAP-TOOLTIP.js
      ========================================== */
 
   Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype, {

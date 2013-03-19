@@ -35,18 +35,24 @@ exports.settings = function(req, res) {
 
 exports.post = function(req, res) {
 
-	var group = Models.use('Group')
-	//console.log(group.test())
+	var groups = Models.use('Groups')
+	groups.getList(function(err, list) {
 
-	if (req.params.type == 'kan') {
-		res.render('post_kan')
-	}
-	else if (req.params.type == 'issue') {
-		res.render('post_issue')
-	}
-	else {
-		res.redirect(301, '/')
-	}
+		res.locals.groups = list
+
+		if (req.params.type == 'kan') {
+			res.render('post_kan')
+		}
+		else if (req.params.type == 'issue') {
+			res.render('post_issue')
+		}
+		else {
+			res.redirect(301, '/')
+		}
+
+	})
+
+	
 }
 
 /**

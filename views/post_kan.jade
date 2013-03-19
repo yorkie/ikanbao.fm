@@ -26,8 +26,8 @@ block append Content
 					.input-prepend
 						span.add-on
 							i.icon-th-large
-						input#kanGroup.span5(type='text', value='', placeholder='选择分类')
-			
+						input#kanGroup.span5(type='text', value='', placeholder='选择分类', autocomplete='off')
+
 			.control-group
 				label.control-label(for='kanTags') 标签
 				.controls
@@ -58,4 +58,4 @@ block append Content
 					a.btn.btn-success.btn-large.disabled 创建
 
 block Module
-	script(src='/scripts/pages/post.js')
+	script(src='/scripts/pages/post_kan.js')

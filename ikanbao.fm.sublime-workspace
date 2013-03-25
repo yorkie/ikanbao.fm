@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"des",
+				"descModal"
+			],
+			[
+				"descrip",
+				"descriptionModal"
+			],
+			[
+				"Group",
+				"GroupSchema"
+			],
+			[
+				"Grou",
+				"GroupSchema"
+			],
+			[
+				"_",
+				"_groups"
+			],
+			[
+				"G",
+				"GroupSchema"
+			],
+			[
+				"Kan",
+				"KanSchema"
+			],
+			[
+				"k",
+				"KanSchema"
+			],
+			[
 				"users",
 				"usersById"
 			],
@@ -240,10 +272,6 @@
 				"express-model"
 			],
 			[
-				"_",
-				"_constructor"
-			],
-			[
 				"this",
 				"thisDatabaseContext"
 			],
@@ -304,10 +332,18 @@
 	"buffers":
 	[
 		{
-			"file": "views/shared/header.jade",
+			"file": "views/post_kan.jade",
 			"settings":
 			{
-				"buffer_size": 2296,
+				"buffer_size": 1916,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/scripts/pages/post_kan.js",
+			"settings":
+			{
+				"buffer_size": 419,
 				"line_ending": "Unix"
 			}
 		},
@@ -315,31 +351,56 @@
 			"file": "routes/index.js",
 			"settings":
 			{
-				"buffer_size": 1286,
+				"buffer_size": 1630,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/shared/sidebar-and-content.jade",
+			"file": "routes/api.js",
 			"settings":
 			{
-				"buffer_size": 1476,
+				"buffer_size": 15,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/scripts/index.js",
+			"file": "assets/css/post.css",
 			"settings":
 			{
-				"buffer_size": 519,
+				"buffer_size": 188,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app.js",
+			"file": "models/kan.js",
 			"settings":
 			{
-				"buffer_size": 2420,
+				"buffer_size": 603,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/article.js",
+			"settings":
+			{
+				"buffer_size": 479,
+				"line_ending": "Unix",
+				"name": "var flashDB = require('flashDB')"
+			}
+		},
+		{
+			"file": "models/user.js",
+			"settings":
+			{
+				"buffer_size": 1311,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/shared/header.jade",
+			"settings":
+			{
+				"buffer_size": 2472,
 				"line_ending": "Unix"
 			}
 		}
@@ -368,31 +429,44 @@
 	},
 	"file_history":
 	[
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/header.css",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/widgets/bootstrap.selector.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/lib/bootstrap.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/pages/post.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/kan.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/group.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/index.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/sidebar-and-content.css",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/sidebar-and-content.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/settings.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/app.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/utils.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/config.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/post_kan.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/post_issue.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/post.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/skeleton.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/sea-config.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/post.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/settings.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/router.js",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/sidebar-and-content.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated.jade",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/header.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/sidebar-and-content.css",
+		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/css/settings.css",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/login.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/register.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/reader.jade",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcome.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/pass.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/bootstrap.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/utils.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.gitmodules",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/package.json",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/README.md",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/flashDB/package.json",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/models/user.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/db/flashDB.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/mongodb.conf",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/node_modules/everyauth/lib/modules/everymodule.js",
@@ -416,7 +490,6 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/.index.js.swp",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/shared/header-new.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/fixed.js",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/index.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-workspace",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/ikanbao.fm.sublime-project",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/assets/scripts/utils/browser.js",
@@ -424,7 +497,6 @@
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/home.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/routes/reader.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/welcomeAuthenticated",
-		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/lib/auth/config.js",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/skeleton.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/views/layout.jade",
 		"/Users/liuyazhong/workspace/private_project/web/ikanbao.fm/startup",
@@ -505,51 +577,50 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/shared/header.jade",
+					"file": "views/post_kan.jade",
 					"settings":
 					{
-						"buffer_size": 2296,
+						"buffer_size": 1916,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1494,
+								1494
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 533.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "routes/index.js",
+					"file": "assets/scripts/pages/post_kan.js",
 					"settings":
 					{
-						"buffer_size": 1286,
+						"buffer_size": 419,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1,
-								1
+								378,
+								378
 							]
 						],
 						"settings":
@@ -565,51 +636,51 @@
 				},
 				{
 					"buffer": 2,
-					"file": "views/shared/sidebar-and-content.jade",
+					"file": "routes/index.js",
 					"settings":
 					{
-						"buffer_size": 1476,
+						"buffer_size": 1630,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								869,
-								869
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "assets/scripts/index.js",
-					"settings":
-					{
-						"buffer_size": 519,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								515,
-								515
+								482,
+								482
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 367.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "routes/api.js",
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -619,28 +690,136 @@
 				},
 				{
 					"buffer": 4,
-					"file": "app.js",
+					"file": "assets/css/post.css",
 					"settings":
 					{
-						"buffer_size": 2420,
+						"buffer_size": 188,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1258,
-								1258
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "models/kan.js",
+					"settings":
+					{
+						"buffer_size": 603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								599
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "models/article.js",
+					"settings":
+					{
+						"buffer_size": 479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var flashDB = require('flashDB')",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "models/user.js",
+					"settings":
+					{
+						"buffer_size": 1311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/shared/header.jade",
+					"settings":
+					{
+						"buffer_size": 2472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1966,
+								1966
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 430.0,
+						"translation.y": 743.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

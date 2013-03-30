@@ -1,0 +1,41 @@
+
+.tags-container {
+	position: absolute;
+	background: #fff;
+	z-index: 100;
+}
+
+.tags-container input {
+	border: 0;
+	outline: none;
+	font-size: 13px;
+	color: #888;
+	width: auto;
+}
+
+.tags-container span {
+	display: inline-block;
+	font-family: Arial;
+	font-size: 13px;
+	cursor: pointer;
+	color: #666;
+	height: 100%;
+	margin-right: 3px;
+}
+
+.tags-container span:hover {
+	background: #eee;
+}
+
+.tags-container span.selected {
+	background: #3a87ad;
+	color: #fff;
+}
+
+.tags-container span i {
+	color: Red;
+}
+
+.tags-container span.selected i {
+	color: #fff;
+}

@@ -39,7 +39,6 @@ exports.post = function(req, res) {
 	groups.getList(function(err, list) {
 
 		res.locals.groups = list
-
 		if (req.params.type == 'kan') {
 			res.render('post_kan')
 		}
@@ -106,7 +105,7 @@ exports.issue = function(req, res) {
  */
 
 exports.api = function(req, res) {
-	require('./api').
+	require('./api')
 }
 
 

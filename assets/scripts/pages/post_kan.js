@@ -1,7 +1,11 @@
 
-/* post */
+/* post kan */
 
-seajs.use([], function() {
+seajs.use(['utils/tags-input'], function() {
+
+	// 报刊标签
+	var tags = $('#kanTags')
+	tags.tagsInput()
 
 	// 添加描述
 	var description = $('#kanDescription')

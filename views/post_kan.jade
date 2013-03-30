@@ -59,6 +59,7 @@ block append Content
 				.btn-group
 					a.btn.btn-success.btn-large.disabled 创建
 
+			//- 添加描述
 			#descriptionModal.modal.hide.fade
 				.modal-header
 					button.close(type='button', data-dismiss='modal') x
@@ -69,12 +70,13 @@ block append Content
 					button.btn(data-dismiss='modal') 关闭
 					button.btn.btn-primary 保存
 
+			//- 上传封面
 			#updateCoverModal.modal.hide.fade
 				.modal-header
 					button.close(type='button', data-dismiss='modal') x
 					h3 上传封面
 				.modal-body
-					textarea
+					
 				.modal-footer
 					button.btn(data-dismiss='modal') 关闭
 					button.btn.btn-primary 保存

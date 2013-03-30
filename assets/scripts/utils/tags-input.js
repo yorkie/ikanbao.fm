@@ -3,7 +3,7 @@
  * tags input
  */
 
-define(function(require) {
+define(function(require, exports, module) {
 
 	require('/css/utils/tags-input.css')
 
@@ -112,5 +112,7 @@ define(function(require) {
 		}
 
 	}
+
+	module.exports = null
 
 })

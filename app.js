@@ -36,10 +36,10 @@ app.configure(function() {
   app.use(afterAuthenticatedHandler)
   
   function filterHandler(req, res, next) {
-    if (!/\/$/.test(req.path))
-      res.redirect(req.path + '/')
-    else
+    if (/\/$/.test(req.path))
       next()
+    else
+      res.redirect(req.path + '/')
   }
 
   function localsHandler(req, res, next) {
@@ -58,7 +58,10 @@ app.configure(function() {
   }
 
   app.use(app.router)
-  app.get('/scripts/lib', combo.combine({rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
+  app.get('/scripts/?', combo.combine({ rootPath: __dirname + '/assets/scripts' }), function(req, res) {
+    res.end(res.body)
+  })
+  app.get('/scripts/lib/?', combo.combine({ rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
     res.end(res.body)
   })
   app.get('/', routes.home)

@@ -40,21 +40,45 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 				},
 
 				dialogStart: function() {
+					// TODO
+				},
 
+				fileQueued: function(file) {
+					// TODO
+				},
+
+				fileQueuedError: function(file, err, msg) {
+					// TODO
+				},
+
+				dialogComplete: function(fileId, queuedId, length) {
+					this.startUpload()
 				},
 
 				uploadStart: function(file) {
-					console.log(file)
+					// TODO
 				},
 
-				error: function(file, err, msg) {
-					console.log(arguments)
+				uploadProgress: function(file, curr, total) {
+					// TODO
+				},
+
+				uploadError: function(file, err, msg) {
+					// TODO
+				},
+
+				uploadSuccess: function(file, serverData, res) {
+					// TODO
+				},
+
+				uploadComplete: function(file) {
+					// TODO
 				}
 
 			}
 
 			var swfu = new SWFUpload({
-				'upload_url': '/api/upload/temp',
+				'upload_url': '/api/upload/temp/',
 				'flash_url': '/flash/swfupload.swf',
 				'file_size_limit': '4048',
 				'file_types': '*.jpg;*.jpeg;*.png;*.webp;*.gif',
@@ -66,8 +90,16 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 
 				// handlers
 				'swfupload_loaded_handler': handlers.loaded,
-				'upload_start_handler': handlers.uploadStart
+				'file_dialog_start_handler': handlers.dialogStart,
+				'file_queued_handler': handlers.fileQueued,
+				'file_queue_error_handler': handlers.fileQueuedError,
+				'file_dialog_complete_handler': handlers.dialogComplete,
+				'upload_start_handler': handlers.uploadStart,
+				'upload_progress_handler': handlers.uploadProgress,
+				'upload_success_handler': handlers.uploadSuccess
 			})
+
+			console.log(swfu)
 
 		})
 		updateCoverModal.modal()

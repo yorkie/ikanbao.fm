@@ -105,7 +105,7 @@ exports.issue = function(req, res) {
  */
 
 exports.api = function(req, res) {
-	require('./api')
+	require('./api')(req, res)
 }
 
 

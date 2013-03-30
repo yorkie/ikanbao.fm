@@ -26,7 +26,7 @@ app.configure(function() {
   
   app.use(express.cookieParser())
   app.use(express.session({ secret: 'htuayreve'}))
-  app.use(express.bodyParser())
+  app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/assets/photos/tmp' }))
   app.use(express.methodOverride())
   app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
@@ -58,6 +58,8 @@ app.configure(function() {
   }
 
   app.use(app.router)
+  app.all('/api/:api/*', routes.api)
+
   app.get('/scripts/?', combo.combine({ rootPath: __dirname + '/assets/scripts' }), function(req, res) {
     res.end(res.body)
   })
@@ -73,8 +75,6 @@ app.configure(function() {
   app.get('/:username/', routes.user)
   app.get('/:username/:kanID', routes.KAN)
   app.get('/:username/:kanID/:issue/', routes.issue)
-
-  app.post('/api/*', routes.api)
 
   // route demos
   // - http://ikanbao.fm

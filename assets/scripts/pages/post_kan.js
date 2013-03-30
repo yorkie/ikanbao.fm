@@ -19,6 +19,7 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 	// 上传封面
 	var updateCover = $('#kanCover')
 	updateCover.click(function() {
+		
 		$(this).blur()
 
 		var updateCoverModal = $('#updateCoverModal')
@@ -57,6 +58,7 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 
 				uploadStart: function(file) {
 					// TODO
+					updateCoverModal.find('.modal-header>h3>span').text('(正在上传...)')
 				},
 
 				uploadProgress: function(file, curr, total) {
@@ -67,8 +69,11 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 					// TODO
 				},
 
-				uploadSuccess: function(file, serverData, res) {
-					// TODO
+				uploadSuccess: function(file, json, res) {
+					json = JSON.parse(json)
+					updateCoverModal.data('src', json.path)
+					updateCoverModal.find('img.img-polaroid').attr('src', json.path)
+					updateCoverModal.find('.modal-header>h3>span').text('(完成)')
 				},
 
 				uploadComplete: function(file) {
@@ -99,9 +104,13 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 				'upload_success_handler': handlers.uploadSuccess
 			})
 
-			console.log(swfu)
-
 		})
+
+		updateCoverModal.find('.modal-footer>button.btn-primary').click(function() {
+			updateCover.val(updateCoverModal.data('src'))
+			updateCoverModal.modal('hide')
+		})
+
 		updateCoverModal.modal()
 
 	})

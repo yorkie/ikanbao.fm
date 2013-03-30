@@ -74,10 +74,18 @@ block append Content
 			#updateCoverModal.modal.hide.fade
 				.modal-header
 					button.close(type='button', data-dismiss='modal') x
-					h3 上传封面
+					h3 
+						| 上传封面
+						span
 				.modal-body
-					button.btn.btn-large 选择文件
+					.span3
+						img.img-polaroid(data-src='holder.js/280x280')
 						#CoverUploadButton
+					.span2
+						p 注意：
+						ul
+							li 格式要求(jpg/jpeg/png/gif/webp)
+							li 大小请控制在4M以内
 				.modal-footer
 					button.btn(data-dismiss='modal') 关闭
 					button.btn.btn-primary 保存

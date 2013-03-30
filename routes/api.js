@@ -23,7 +23,9 @@ function Upload() {
 	
 	var fileInfo = req.files.Filedata
 	if (req.params[0] = 'temp') {
-		
+		res.write(JSON.stringify({
+			path: fileInfo.path.replace(app.get('root') + '/assets', '')
+		}))
 	}
 
 }

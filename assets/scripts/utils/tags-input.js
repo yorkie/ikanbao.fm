@@ -105,7 +105,9 @@ define(function(require) {
 		 */
 
 		function delTag() {
-			cont.children('span.selected').remove()
+			var selectedSpan = cont.children('span.selected')
+			delete tagsTable[selectedSpan.text().slice(0, -1)]
+			selectedSpan.remove()
 			cont.innerInput.focus()
 		}
 

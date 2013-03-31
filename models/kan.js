@@ -9,7 +9,7 @@ Models.define('Kan', function(out, Db, cache) {
 	// define Models
 	var KanSchema = new Db.Schema({
 		name: String,
-		group: Number,
+		group: String,
 		tags: String,
 		description: String,
 		cover: String
@@ -27,6 +27,10 @@ Models.define('Kan', function(out, Db, cache) {
 			if (err) throw '[Type Error]'
 			db.close()
 		})
+	}
+
+	out.add = function(kan) {
+		// TODO
 	}
 
 })

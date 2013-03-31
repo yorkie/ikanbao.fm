@@ -26,7 +26,7 @@ block append Content
 					.input-prepend
 						span.add-on
 							i.icon-th-large
-						select
+						select#kanGroup
 							for group in groups
 								option #{group}
 
@@ -55,9 +55,9 @@ block append Content
 
 			.control-group.buttons
 				.btn-group
-					a.btn.btn-large.disabled 预览
+					a#preview.btn.btn-large 预览
 				.btn-group
-					a.btn.btn-success.btn-large.disabled 创建
+					a#submit.btn.btn-success.btn-large 创建
 
 			//- 添加描述
 			#descriptionModal.modal.hide.fade

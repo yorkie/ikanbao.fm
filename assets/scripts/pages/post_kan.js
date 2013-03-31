@@ -3,17 +3,38 @@
 
 seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 
+	// 报刊名
+	var kname = $('#kanName')
+	kname.on('blur', function() {
+		var val = $.trim($(this).val())
+		if (val !== '' && /[a-z0-9\u4e00-\u9fa5_]/gi.test(val)) {
+			kname.data('isValided', true)
+		}
+		else {
+			kname.data('isValided', false)
+		}
+	})
+
+	// 报刊分类
+	var group = $('#kanGroup')
+
 	// 报刊标签
 	var tags = $('#kanTags')
 	tags.tagsInput()
 
 	// 添加描述
 	var description = $('#kanDescription')
-	description.focus(function() {
+	description.click(function() {
 		var _this = $(this); _this.blur()
 		var descModal = $('#descriptionModal')
+		descModal.delegate('', 'shown', function() {
+			descModal.find('textarea').focus()
+		})
+		descModal.delegate('.modal-footer>button.btn-primary', 'click', function() {
+			description.val(descModal.find('textarea').val())
+			descModal.modal('hide')
+		})
 		descModal.modal()
-		descModal.find('textarea').focus().text(_this.blur().text())
 	})
 
 	// 上传封面
@@ -21,9 +42,8 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 	updateCover.click(function() {
 		
 		$(this).blur()
-
 		var updateCoverModal = $('#updateCoverModal')
-		updateCoverModal.on('shown', function() {
+		updateCoverModal.delegate('', 'shown', function() {
 
 			if (updateCover.data('swfupload_is_loaded'))
 				return
@@ -57,7 +77,6 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 				},
 
 				uploadStart: function(file) {
-					// TODO
 					updateCoverModal.find('.modal-header>h3>span').text('(正在上传...)')
 				},
 
@@ -71,7 +90,8 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 
 				uploadSuccess: function(file, json, res) {
 					json = JSON.parse(json)
-					updateCoverModal.data('src', json.path)
+					updateCoverModal.data('name', json.name)
+					updateCoverModal.data('path', json.path)
 					updateCoverModal.find('img.img-polaroid').attr('src', json.path)
 					updateCoverModal.find('.modal-header>h3>span').text('(完成)')
 				},
@@ -85,12 +105,16 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 			var swfu = new SWFUpload({
 				'upload_url': '/api/upload/temp/',
 				'flash_url': '/flash/swfupload.swf',
+				'file_post_name': 'image',
 				'file_size_limit': '4048',
+				'file_upload_limit': 10,
+				'file_queued_limit': 1,
 				'file_types': '*.jpg;*.jpeg;*.png;*.webp;*.gif',
 				'button_placeholder_id': 'CoverUploadButton',
 				'button_height': 0,
 				'button_width': 0,
 				'button_cursor': SWFUpload.CURSOR.HAND,
+				'button_action': SWFUpload.BUTTON_ACTION.SELECT_FILE,
 				'button_window_mode' : SWFUpload.WINDOW_MODE.TRANSPARENT,
 
 				// handlers
@@ -105,14 +129,40 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 			})
 
 		})
-
-		updateCoverModal.find('.modal-footer>button.btn-primary').click(function() {
-			updateCover.val(updateCoverModal.data('src'))
+		
+		updateCoverModal.delegate('.modal-footer>button.btn-primary', 'click', function() {
+			updateCover.data('path', updateCoverModal.data('path'))
+			updateCover.val(updateCoverModal.data('name'))
 			updateCoverModal.modal('hide')
 		})
 
 		updateCoverModal.modal()
+	})
 
+	// 预览
+	var previewButton = $('#preview')
+	preview.click(function() {
+		// TODO
+	})
+
+	// 创建
+	var submitButton = $('#submit')
+	submitButton.click(function() {
+		if (!kname.data('isValided')) {
+			kname.focus()
+			return
+		}
+		if (!tags.isValided) {
+			tags.focus()
+			return
+		}
+		$.post('/api/kan/', {
+			name: kname.val(),
+			group: group.val(),
+			tags: tags.val(),
+			description: description.val(),
+			cover: updateCover.data('path')
+		})
 	})
 
 })

@@ -91,7 +91,7 @@ exports.KAN = function(req, res) {
  */
 
 exports.issue = function(req, res) {
-		res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
+	res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
 }
 
 

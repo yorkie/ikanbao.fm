@@ -69,6 +69,14 @@ define(function(require, exports, module) {
 			}
 		})
 
+		self.val = function() {
+			var text, result = ''
+			for (text in tagsTable) {
+				result += (text + ';')
+			}
+			return result
+		}
+
 		/**
 		 * add a tag
 		 */
@@ -91,10 +99,12 @@ define(function(require, exports, module) {
 			if (err) {
 				var errorDom = $('<i></i>').text(err + ';')
 				innerSpan.html(errorDom)
+				self.isValided = false
 			}
 			else {
 				innerSpan.text(one + ';')
 				tagsTable[one] = one
+				self.isValided = true
 			}
 			innerSpan.insertBefore(cont.innerInput)
 			cont.innerInput.val('')

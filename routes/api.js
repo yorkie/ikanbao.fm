@@ -9,6 +9,7 @@ module.exports = function(_req, _res) {
 
 	switch (req.params.api) {
 		case 'upload': Upload(); break;
+		case 'kan'   : Kan(); break;
 	}
 
 	res.end()
@@ -21,11 +22,25 @@ module.exports = function(_req, _res) {
 
 function Upload() {
 	
-	var fileInfo = req.files.Filedata
+	var fileInfo = req.files.image
 	if (req.params[0] = 'temp') {
 		res.write(JSON.stringify({
-			path: fileInfo.path.replace(app.get('root') + '/assets', '')
+			path: fileInfo.path.replace(app.get('root') + '/assets', ''),
+			name: fileInfo.name
 		}))
+	}
+
+}
+
+/**
+ * Kan
+ */
+
+function Kan() {
+
+	if (req.route.method == 'post') {
+		var kan = Models.use('Kan')
+		kan.add(null)
 	}
 
 }

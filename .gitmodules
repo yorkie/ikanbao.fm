@@ -3,4 +3,4 @@
 	url = git://github.com/yorkie/FlashDB.git
 [submodule "node_modules/express-model"]
 	path = node_modules/express-model
-	url = https://github.com/yorkie/express-model.git
+	url = git://github.com/yorkie/express-model.git

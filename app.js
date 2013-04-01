@@ -76,17 +76,6 @@ app.configure(function() {
   app.get('/:username/:kanID', routes.KAN)
   app.get('/:username/:kanID/:issue/', routes.issue)
 
-  // route demos
-  // - http://ikanbao.fm
-  // - http://ikanbao.fm/settings/
-  // - http://ikanbao.fm/store/
-  // - http://ikanbao.fm/api/
-  // - http://ikanbao.fm/go/
-  // - http://ikanbao.fm/test/
-  // - http://ikanbao.fm/login/
-  // - http://ikanbao.fm/signup/
-  // - http://ikanbao.fm/others/
-
   global.app = app;
   global.Models = models(__dirname + '/models')
 

@@ -21,15 +21,56 @@ Models.define('Kan', function(out, Db, cache) {
 		// TODO
 	}
 
-	out.create = function(kan) {
-		db = Db.createConnection(connStr)
+	/**
+	 * 创建新刊
+	 */
+
+	out.create = function(kan, fn) {
+		var db = Db.createConnection(connStr)
 		db.model('Kan').create(kan, function(err, kan) {
-			if (err) throw '[Type Error]'
+			if (err) throw err
 			db.close()
 		})
 	}
 
-	out.add = function(kan) {
+	/**
+	 * 删除报刊
+	 */
+
+	out.destory = function(kname, fn) {
+		// TODO
+	}
+
+	/**
+	 * 修改已有报刊参数
+	 */
+
+	out.update = function(kan, fn) {
+		// TODO
+	}
+
+
+	/**
+	 * 查询报刊 by Name
+	 */
+
+	out.findByName = function(kname, fn) {
+		// TODO
+	}
+
+	/**
+	 * 查询报刊 by Group
+	 */
+
+	out.findByGroup = function(group, fn) {
+		// TODO
+	}
+
+	/**
+	 * 查询报刊 by tags
+	 */
+
+	out.findByTag = function(group, fn) {
 		// TODO
 	}
 

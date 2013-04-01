@@ -46,7 +46,12 @@ define(function(require, exports, module) {
 		})
 
 		cont.innerInput.on('focus', function() {
+			self.addClass('focused-input')
 			cont.children('span').data('is_selected', false).removeClass('selected')
+		})
+
+		cont.innerInput.on('blur', function() {
+			self.removeClass('focused-input')
 		})
 
 		cont.innerInput.on('keydown', function(e) {
@@ -59,7 +64,7 @@ define(function(require, exports, module) {
 			}
 		})
 
-		self.on('keydown', function(e) {
+		self.delegate('', 'keydown', function(e) {
 			if (e.keyCode == 13) {
 				cont.children('span.selected').data('is_selected', false).removeClass('selected')
 				cont.innerInput.focus()
@@ -67,6 +72,14 @@ define(function(require, exports, module) {
 			if (e.keyCode == 8) {
 				delTag()
 			}
+		})
+
+		self.delegate('', 'click', function() {
+			cont.innerInput.focus()
+		})
+
+		self.delegate('', 'blur', function() {
+			cont.children('span').data('is_selected', false).removeClass('selected')
 		})
 
 		self.val = function() {
@@ -98,13 +111,15 @@ define(function(require, exports, module) {
 
 			if (err) {
 				var errorDom = $('<i></i>').text(err + ';')
-				innerSpan.html(errorDom)
-				self.isValided = false
+				innerSpan.html(errorDom).delay(2000).animate({
+					'opacity': 0
+				}).promise().done(function() {
+					innerSpan.remove()
+				})
 			}
 			else {
 				innerSpan.text(one + ';')
 				tagsTable[one] = one
-				self.isValided = true
 			}
 			innerSpan.insertBefore(cont.innerInput)
 			cont.innerInput.val('')

@@ -40,7 +40,7 @@ function Kan() {
 
 	if (req.route.method == 'post') {
 		var kan = Models.use('Kan')
-		kan.add(null)
+		kan.add(req.body)
 	}
 
 }

@@ -82,7 +82,6 @@ exports.user = function(req, res) {
 
 	Models.use('User').homepage(req.params.username, function(err, data) {
 		if (err) throw err
-		console.log(data)
 		res.render('user_homepage', data)
 	})
 

@@ -7,14 +7,26 @@
 
 .homepage-info, .homepage-nav {
 	position: absolute;
-	left: 100px;
+	left: 210px;
 }
 
-
 .homepage-info {
-	bottom: 100px;
+	bottom: 40px;
 }
 
 .homepage-nav  {
-	bottom: 0px;
+	bottom: -40px;
+}
+
+.homepage-pic {
+	position: absolute;
+	height: 168px;
+	width: 168px;
+	left: 30px;
+	bottom: -10px;
+}
+
+.homepage-pic img {
+	height: 100%;
+	width: 100%;
 }

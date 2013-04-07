@@ -1,8 +1,13 @@
 
 .homepage-header {
+	position: relative;
+	border: 1px solid #dedede;
+}
+
+.homepage-coverImg {
 	min-height: 200px;
 	background: #eee;
-	position: relative;
+	margin-bottom: 30px;
 }
 
 .homepage-info, .homepage-nav {
@@ -11,11 +16,11 @@
 }
 
 .homepage-info {
-	bottom: 40px;
+	bottom: 70px;
 }
 
 .homepage-nav  {
-	bottom: -40px;
+	bottom: -10px;
 }
 
 .homepage-pic {
@@ -23,7 +28,7 @@
 	height: 168px;
 	width: 168px;
 	left: 30px;
-	bottom: -10px;
+	bottom: 20px;
 }
 
 .homepage-pic img {

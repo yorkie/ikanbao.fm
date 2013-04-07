@@ -79,7 +79,7 @@ exports.extend = function(req, res) {
  */
 
 exports.user = function(req, res) {
-
+	
 	Models.use('User').homepage(req.params.username, function(err, data) {
 		if (err) throw err
 		res.render('user_homepage', data)

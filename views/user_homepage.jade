@@ -9,6 +9,9 @@ block append Content
 
 	.homepage-header.container
 		
+		.homepage-coverImg
+			img
+
 		.homepage-info.span6
 			h1=host.name
 
@@ -16,13 +19,25 @@ block append Content
 			.navbar-inner
 				ul.nav
 					li.active
-						a(href='#') 个人信息
+						a(href='/#{host.name}/') 个人信息
 					li
-						a(href='#kan') Ta的报刊
+						a(href='/#{host.name}/#kan') Ta的报刊
 					li
-						a(href='#subscribe') Ta的订阅
-					li
-						a(href='#more') 更多
+						a(href='/#{host.name}/#subscribe') Ta的订阅
+					li.dropdown
+						a.dropdown-toggle(href='#', data-toggle='dropdown')
+							| 更多
+							b.caret
+						ul.dropdown-menu
+							li
+								a item1
+							li
+								a item2
+							li
+								a item3
+							li.divider
+							li
+								a quit
 
 		.homepage-pic
 			img.img-polaroid(data-src='holder.js/168x168')

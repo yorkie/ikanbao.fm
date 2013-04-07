@@ -73,10 +73,13 @@ Models.define('User', function(out, Db, cache) {
 		db.model('User').findOne({
 			name: username
 		}).exec(function(err, d1) {
+
 			if (err) throw err
 			if (!d1) return
+			db.close()	// close this db
+
+			// Get the Kans
 			Models.use('Kan').find({ user: username }, function(err, d2) {
-				db.close()
 				fn(err, {
 					host: {
 						'email': d1.email,
@@ -86,6 +89,7 @@ Models.define('User', function(out, Db, cache) {
 					}
 				})
 			})
+
 		})
 
 	}

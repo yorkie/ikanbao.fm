@@ -67,11 +67,30 @@ Models.define('User', function(out, Db, cache) {
 	 * user homepage
 	 */
 
-	out.homepage = function(fn) {
-		fn(null, {})
+	out.homepage = function(username, fn) {
+
+		var db = Db.createConnection(connStr)
+		db.model('User').findOne({
+			name: username
+		}).exec(function(err, d1) {
+			if (err) throw err
+			if (!d1) return
+			Models.use('Kan').find({ user: username }, function(err, d2) {
+				db.close()
+				fn(err, {
+					host: {
+						'email': d1.email,
+						'name': d1.name,
+						'role': d1.role,
+						'kans': d2
+					}
+				})
+			})
+		})
+
 	}
 
-	return;
+	return
 
 })
 

@@ -3,7 +3,30 @@ extend shared/skeleton
 
 block append Head
 
+	link(rel='stylesheet', href='/css/homepage.css')
 
 block append Content
 
-	div 个人主页
+	.homepage-header.container
+		
+		.homepage-info.span6
+			h1=host.name
+
+		.homepage-nav.navbar.span6
+			.navbar-inner
+				ul.nav
+					li.active
+						a(href='#') 个人信息
+					li
+						a(href='#kan') Ta的报刊
+					li
+						a(href='#subscribe') Ta的订阅
+					li
+						a(href='#more') 更多
+
+
+	.homepage-content.container
+
+
+
+	.homepage-footer.container

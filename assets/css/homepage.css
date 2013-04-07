@@ -1,0 +1,20 @@
+
+.homepage-header {
+	min-height: 200px;
+	background: #eee;
+	position: relative;
+}
+
+.homepage-info, .homepage-nav {
+	position: absolute;
+	left: 100px;
+}
+
+
+.homepage-info {
+	bottom: 100px;
+}
+
+.homepage-nav  {
+	bottom: 0px;
+}

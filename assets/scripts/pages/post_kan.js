@@ -13,6 +13,7 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 		else {
 			kname.data('isValided', false)
 		}
+
 	})
 
 	// 报刊分类
@@ -148,17 +149,26 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 	// 创建
 	var submitButton = $('#submit')
 	submitButton.click(function() {
+		
 		if (!kname.data('isValided')) {
 			kname.focus()
 			return
 		}
-		$.post('/api/kan/', {
-			name: kname.val(),
-			group: group.val(),
-			tags: tags.val(),
-			description: description.val(),
-			cover: updateCover.data('path')
-		})
-	})
 
+		$.getJSON('/api/kan/?name=' + kname.val(), function(json) {
+			if (json.length == 0) {
+				$.post('/api/kan/', {
+					name: kname.val(),
+					group: group.val(),
+					tags: tags.val(),
+					cover: updateCover.data('path'),
+					description: description.val()
+				})
+			}
+			else {
+				alert('报刊名已存在')
+			}
+		})
+
+	})
 })

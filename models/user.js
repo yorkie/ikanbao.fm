@@ -63,6 +63,14 @@ Models.define('User', function(out, Db, cache) {
 	}
 
 
+	/**
+	 * user homepage
+	 */
+
+	out.homepage = function(fn) {
+		fn(null, {})
+	}
+
 	return;
 
 })

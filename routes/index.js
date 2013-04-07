@@ -35,6 +35,10 @@ exports.settings = function(req, res) {
 
 exports.post = function(req, res) {
 
+	if (!req.user) {
+		res.redirect('/')
+	}
+
 	var groups = Models.use('Groups')
 	groups.getList(function(err, list) {
 
@@ -75,7 +79,13 @@ exports.extend = function(req, res) {
  */
 
 exports.user = function(req, res) {
-	res.end('username: ' + req.params.username)
+
+	var user = Models.use('User', req.params.username)
+	user.homepage(function(err, models) {
+		if (err) throw err
+		res.render('user_homepage', models)
+	})
+
 }
 
 /**

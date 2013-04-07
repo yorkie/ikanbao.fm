@@ -50,29 +50,28 @@ Models.define('Kan', function(out, Db, cache) {
 		// TODO
 	}
 
-
-	/**
-	 * 查询报刊 by Name
-	 */
-
-	out.findByName = function(kname, fn) {
-		// TODO
+	out.find = function(criterion, fn) {
+		var db = Db.createConnection(connStr)
+		db.model('Kan').find(criterion).exec(function(err, kan) {
+			if (err) throw err
+			db.close()
+			fn(err, kan)
+		})
 	}
 
-	/**
-	 * 查询报刊 by Group
-	 */
-
-	out.findByGroup = function(group, fn) {
-		// TODO
-	}
 
 	/**
-	 * 查询报刊 by tags
+	 * 查询报刊(One)
 	 */
 
-	out.findByTag = function(group, fn) {
-		// TODO
+	out.findOne = function(criterion, fn) {
+		var db = Db.createConnection(connStr)
+		db.model('Kan').findOne(criterion).exec(function(err, kan) {
+			if (err) throw err
+			db.close()
+			fn(err, kan)
+		})
 	}
+
 
 })

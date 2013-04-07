@@ -45,4 +45,11 @@ function Kan() {
 		})
 	}
 
+	if (req.route.method == 'get') {
+		var kan = Models.use('Kan')
+		kan.find(req.query, function(err, result) {
+			res.json(200, result)
+		})
+	}
+
 }

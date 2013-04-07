@@ -8,6 +8,7 @@ Models.define('Kan', function(out, Db, cache) {
 	
 	// define Models
 	var KanSchema = new Db.Schema({
+		user: String,
 		name: String,
 		group: String,
 		tags: String,

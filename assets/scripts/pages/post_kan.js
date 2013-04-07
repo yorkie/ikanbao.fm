@@ -152,10 +152,6 @@ seajs.use(['lib/swfupload', 'utils/tags-input'], function() {
 			kname.focus()
 			return
 		}
-		if (!tags.isValided) {
-			tags.focus()
-			return
-		}
 		$.post('/api/kan/', {
 			name: kname.val(),
 			group: group.val(),

@@ -12,8 +12,6 @@ module.exports = function(_req, _res) {
 		case 'kan'   : Kan(); break;
 	}
 
-	res.end()
-
 }
 
 /**
@@ -40,7 +38,11 @@ function Kan() {
 
 	if (req.route.method == 'post') {
 		var kan = Models.use('Kan')
-		kan.add(req.body)
+		var data = req.body
+		data.user = req.user.name
+		kan.create(data, function() {
+			// TODO
+		})
 	}
 
 }

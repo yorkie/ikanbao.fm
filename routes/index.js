@@ -1,4 +1,12 @@
 
+/**
+ * NULL
+ */
+
+exports.redirect = function(req, res) {
+	res.redirect(req.path + '/')
+}
+
 /*
  * GET home page.
  */
@@ -79,7 +87,7 @@ exports.extend = function(req, res) {
  */
 
 exports.user = function(req, res) {
-	
+
 	Models.use('User').homepage(req.params.username, function(err, data) {
 		if (err) throw err
 		res.render('user_homepage', data)

@@ -11,7 +11,8 @@ var
   models = require('express-model'),
   routes = require('./routes'),
   auth = require('./lib/auth'),
-  bootstrap = require('./lib/bootstrap')
+  bootstrap = require('./lib/bootstrap'),
+  route_map = require('./lib/route-map')
 
 var 
   app = express(),
@@ -19,6 +20,7 @@ var
 
 app.configure(function() {
 
+  route_map(app)
   app.set('port', process.env.PORT || 3000)
   app.set('view engine', 'jade')
   app.set('views', __dirname + '/views')
@@ -36,10 +38,8 @@ app.configure(function() {
   app.use(afterAuthenticatedHandler)
   
   function filterHandler(req, res, next) {
-    if (/\/$/.test(req.path))
-      next()
-    else
-      res.redirect(req.path + '/')
+    // TODO
+    next()
   }
 
   function localsHandler(req, res, next) {
@@ -66,15 +66,42 @@ app.configure(function() {
   app.get('/scripts/lib/?', combo.combine({ rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
     res.end(res.body)
   })
-  app.get('/', routes.home)
-  app.get('/history/*', routes.history)
-  app.get('/settings/*', routes.settings)
-  app.get('/post/:type/', routes.post)
-  app.get('/go/*', routes.go)
-  app.get('/extend/*', routes.extend)
-  app.get('/:username/', routes.user)
-  app.get('/:username/:kanID', routes.KAN)
-  app.get('/:username/:kanID/:issue/', routes.issue)
+
+  app.map({
+    '/': {
+      get: routes.home
+    },
+    '/history': {
+      get: routes.history
+    },
+    '/settings': {
+      get: routes.settings
+    },
+    '/post/:type': {
+      get: routes.post
+    },
+    '/go': {
+      get: routes.go
+    }
+  })
+
+  app.map({
+    '/:username': {
+      get: routes.user,
+      '/kan': {
+        get: routes.user
+      },
+      '/subscribe': {
+        get: routes.user
+      },
+      '/:kanID': {
+        get: routes.KAN,
+        '/:issue': {
+          get: routes.issue
+        }
+      }
+    }
+  })
 
   global.app = app;
   global.Models = models(__dirname + '/models')

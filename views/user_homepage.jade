@@ -7,6 +7,10 @@ block append Head
 
 block append Content
 
+	- var isCurrentAccount = false
+	if (user)
+		isCurrentAccount = (user.name == host.name)
+
 	.homepage-header.container
 		
 		.homepage-coverImg
@@ -15,36 +19,58 @@ block append Content
 		.homepage-info.span6
 			h1=host.name
 
-		.homepage-nav.navbar.span9
+		#homepage-nav.homepage-nav.navbar.span9
 			.navbar-inner
 				ul.nav
-					li.active
-						a(href='/#{host.name}/') 个人信息
 					li
-						a(href='/#{host.name}/kan') Ta的报刊
+						a(href='/#{host.name}/') 个人资料
 					li
-						a(href='/#{host.name}/subscribe') Ta的订阅
-					li.dropdown
-						a.dropdown-toggle(href='#', data-toggle='dropdown')
-							| 更多
-							b.caret
-						ul.dropdown-menu
-							li
-								a item1
-							li
-								a item2
-							li
-								a item3
-							li.divider
-							li
-								a quit
+						a(href='/#{host.name}/kan') #{isCurrentAccount ? '我': 'Ta'}的报刊
+					li
+						a(href='/#{host.name}/subscribe') #{isCurrentAccount ? '我': 'Ta'}的订阅
 
 		.homepage-pic
 			img.img-polaroid(data-src='holder.js/168x168')
 
 
-	.homepage-content.container
+	#homepage-container.homepage-container.container
+		
+		.homepage-content.homepage-profile
+			table.table
+				tbody
+					tr
+						td 用户名
+						td @#{host.name}
+					tr
+						td 电子邮箱
+						td=host.email
+					tr
+						td 帐户等级
+						td=host.role
 
+		.homepage-content.homepage-kans
+			ul.thumbnails
+				each kan, i in host.kans
+					li.span3
+						div.thumbnail
+							a(href='/#{host.name}/#{kan.name}')
+								img(data-src='holder.js/300x300', alt='')
+							.caption
+								a(href='/#{host.name}/#{kan.name}')
+									h3= kan.name
+								p=  kan.description ? kan.description : '暂无描述'
 
+		.homepage-content.homepage-subscribes
+			| 订阅
 
 	.homepage-footer.container
+
+block Module
+	script(src='/scripts/pages/homepage.js')
+
+
+
+
+
+
+

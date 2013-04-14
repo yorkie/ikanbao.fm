@@ -36,3 +36,25 @@
 	height: 100%;
 	width: 100%;
 }
+
+/* Container */
+
+.homepage-container {
+	margin-top: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.homepage-content {
+
+}
+
+.homepage-profile table {
+	margin: 20px;
+	width: 50%;
+}
+
+.homepage-kans .thumbnails {
+	margin: 20px auto;
+}

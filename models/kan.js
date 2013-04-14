@@ -50,6 +50,10 @@ Models.define('Kan', function(out, Db, cache) {
 		// TODO
 	}
 
+	/**
+	 * 查询报刊
+	 */
+
 	out.find = function(criterion, fn) {
 		var db = Db.createConnection(connStr)
 		db.model('Kan').find(criterion).exec(function(err, kan) {
@@ -58,7 +62,6 @@ Models.define('Kan', function(out, Db, cache) {
 			fn(err, kan)
 		})
 	}
-
 
 	/**
 	 * 查询报刊(One)

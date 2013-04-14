@@ -100,7 +100,8 @@ exports.user = function(req, res) {
  */
 
 exports.KAN = function(req, res) {
-	res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID)
+	//res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID)
+	res.render('kan', null)
 }
 
 /**
@@ -108,7 +109,8 @@ exports.KAN = function(req, res) {
  */
 
 exports.issue = function(req, res) {
-	res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
+	//res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
+	res.render('issue', null)
 }
 
 

@@ -1,8 +1,6 @@
 
-/* post issue */
-
 seajs.use([], function() {
 
-	
+	// TODO
 
 })

@@ -7,7 +7,25 @@ block append Head
 
 block append Content
 
-	.row
+	#issue.container
+		.row
+
+			.main-section.span6.offset1
+				p.issue-title
+					label(for='issue-title') 标题
+					input(type='text', id='issue-title', value='', placeholder='可以为空')
+				p.issue-content
+					// 这里会根据 刊类型(主/副) 来具体确定编辑器的形式
+					#myEditor
+						textarea 编辑器
+
+			.sidebar.span3
+				p
+					label(for='kanID') 报刊
+					input(type='text', id='kanID')
+				p
+					label(for='copyright') 版权选项
+					input(type='text', id='copyright')
 
 
 block Module

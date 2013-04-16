@@ -74,6 +74,9 @@ app.configure(function() {
     '/history': {
       get: routes.history
     },
+    '/groups': {
+      get: routes.groups
+    },
     '/settings': {
       get: routes.settings
     },

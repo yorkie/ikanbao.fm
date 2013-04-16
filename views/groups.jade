@@ -1,0 +1,14 @@
+
+//- Welcome Authenticated
+extend shared/sidebar-and-content
+
+block append head
+  
+  link(rel='stylesheet', href='/css/groups.css')
+  script
+    ENV.pageID = 2
+
+block append content
+
+  for item in groups
+    div= item

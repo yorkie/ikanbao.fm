@@ -64,10 +64,10 @@ Models.define('User', function(out, Db, cache) {
 
 
 	/**
-	 * user homepage
+	 * user homepage for view
 	 */
 
-	out.homepage = function(username, fn) {
+	out.view_homepage = function(username, fn) {
 
 		var db = Db.createConnection(connStr)
 		db.model('User').findOne({

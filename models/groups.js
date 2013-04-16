@@ -23,16 +23,24 @@ Models.define('Groups', function(out, Db, cache) {
 		return out
 	}
 
+	/**
+	 * get the list of groups
+	 */
+
 	out.getList = function(fn) {
 		db = Db.createConnection(connStr)
 		db.model('Groups').findOne().exec(function(err, result) {
-			fn.call(null, err, result.content)
+			fn(err, result.content)
 			db.close()
 		})
 	}
 
-	out.add = function(name) {
-		// body
+	/**
+	 * groups for view
+	 */
+
+	out.view_groups = function(fn) {
+		out.getList(fn)
 	}
 
 })

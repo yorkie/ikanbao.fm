@@ -24,8 +24,34 @@ exports.home = function(req, res) {
  */
 
 exports.history = function(req, res) {
+
+	if (!req.user) {
+		res.redirect('/')
+		return
+	}
+
 	res.locals.page.name = 'history'
 	res.end('history')
+}
+
+/**
+ * GET /groups
+ */
+
+exports.groups = function(req, res) {
+
+	if (!req.user) {
+		res.redirect('/')
+		return
+	}
+
+	Models.use('Groups').view_groups(function(err, data) {
+		if (err) throw err
+		res.render('groups', {
+			groups: data
+		})
+	})
+	
 }
 
 /**
@@ -33,6 +59,12 @@ exports.history = function(req, res) {
  */
 
 exports.settings = function(req, res) {
+
+	if (!req.user) {
+		res.redirect('/')
+		return
+	}
+
 	res.locals.page.name = 'settings'
 	res.render('settings')
 }
@@ -45,6 +77,7 @@ exports.post = function(req, res) {
 
 	if (!req.user) {
 		res.redirect('/')
+		return
 	}
 
 	var groups = Models.use('Groups')
@@ -88,7 +121,7 @@ exports.extend = function(req, res) {
 
 exports.user = function(req, res) {
 
-	Models.use('User').homepage(req.params.username, function(err, data) {
+	Models.use('User').view_homepage(req.params.username, function(err, data) {
 		if (err) throw err
 		res.render('user_homepage', data)
 	})

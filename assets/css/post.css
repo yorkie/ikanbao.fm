@@ -1,5 +1,12 @@
-#kan {
+/* Common Styles */
+#kan, #issue {
 	padding: 30px 0;
+}
+
+/* Post Kan Styles */
+
+#kan {
+	/* TODO */
 }
 
 #kan .control-group {
@@ -15,5 +22,27 @@
 }
 
 textarea {
+	width: 95%;
+}
+
+/* Post Issue Styles */
+
+#issue {
+	/* TODO */
+}
+
+.main-section {
+	/* TODO */
+}
+
+.sidebar {
+	/* TODO */
+}
+
+.issue-title label, .issue-title input {
+	/* TODO */
+}
+
+.issue-title input {
 	width: 95%;
 }

@@ -8,12 +8,14 @@ Models.define('Issue', function(out, Db, cache) {
 	
 	// define Models
 	var IssueSchema = new Db.Schema({
-		title: String,
+		title: String,		// 标题
 		type: Boolean,		// 标示主刊/副刊
 		content: String,	// 主刊：HTML, 副刊：PDF
-		date: Date
+		date: Date,				// 发布时间
+		kanId: String,		// 所属的报刊
+
 	})
-	IssueSchema.index()
+	IssueSchema.index({kan: 1})
 	Db.model('Issue', IssueSchema)
 
 	out._constructor = function(option) {

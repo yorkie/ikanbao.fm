@@ -80,12 +80,11 @@ exports.post = function(req, res) {
 		return
 	}
 
-	if (req.params.type === 'kan')
-		post_kan()
-	else if (req.params.type === 'issue')
-		post_issue()
-	else
-		res.redirect(301)
+	switch (req.params.type) {
+		case 'kan':   post_kan(); break;
+		case 'issue': post_issue(); break;
+		default: res.redirect(301); break;
+	}
 
 	/* post kan */
 	function post_kan() {

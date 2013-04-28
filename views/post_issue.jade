@@ -11,22 +11,33 @@ block append Content
 		.row
 
 			.main-section.span6.offset1
-				p.issue-title
+				.issue-title
 					label(for='issue-title') 标题
 					input(type='text', id='issue-title', value='', placeholder='可以为空')
-				p.issue-content
+				.issue-content
 					// 这里会根据 刊类型(主/副) 来具体确定编辑器的形式
-					#myEditor
-						textarea 编辑器
+					textarea#myEditor
+						| 欢迎使用
+				.issue-btns
+					.btn-group
+						a.btn 取消
+					.btn-group.pull-right
+						a.btn.btn-success 发布
+					.btn-group.pull-right
+						a.btn 预览
 
 			.sidebar.span3
 				p
-					label(for='kanID') 报刊
-					input(type='text', id='kanID')
+					label(for='kanID') 发布到
+					select
+						for kan in kans
+							option=kan.name
 				p
-					label(for='copyright') 版权选项
-					input(type='text', id='copyright')
+					label 发布时间
+					input(type='text', value='马上发布', disabled)
 
 
 block Module
+	script
+		ENV.userRole = #{user.role}
 	script(src='/scripts/pages/post_issue.js')

@@ -46,3 +46,8 @@ textarea {
 .issue-title input {
 	width: 95%;
 }
+
+.issue-btns {
+	margin: 10px 0;
+	width: 98%;
+}

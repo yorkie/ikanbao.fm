@@ -19,7 +19,8 @@ seajs.config({
 	plugins: [
 		'shim',
 		'text',
-		'combo'
+		'combo',
+		'no-cache'
 	],
 	comboSyntax: ['?', '&'],
 	shim: {

@@ -66,6 +66,9 @@ app.configure(function() {
   app.get('/scripts/lib/?', combo.combine({ rootPath: __dirname + '/assets/scripts/lib' }), function(req, res) {
     res.end(res.body)
   })
+  app.get('/scripts/lib/ueditor/?', combo.combine({ rootPath: __dirname + '/assets/scripts/lib/ueditor' }), function(req, res) {
+    res.end(res.body)
+  })
 
   app.map({
     '/': {

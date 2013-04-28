@@ -80,23 +80,31 @@ exports.post = function(req, res) {
 		return
 	}
 
-	var groups = Models.use('Groups')
-	groups.getList(function(err, list) {
+	if (req.params.type === 'kan')
+		post_kan()
+	else if (req.params.type === 'issue')
+		post_issue()
+	else
+		res.redirect(301)
 
-		res.locals.groups = list
-		if (req.params.type == 'kan') {
-			res.render('post_kan')
-		}
-		else if (req.params.type == 'issue') {
-			res.render('post_issue')
-		}
-		else {
-			res.redirect(301, '/')
-		}
+	/* post kan */
+	function post_kan() {
+		Models.use('Groups').getList(function(err, list) {
+			res.render('post_kan', {
+				'groups': list
+			})
+		})
+	}
 
-	})
+	/* post issue */
+	function post_issue() {
+		Models.use('Kan').find({'user': req.user.name}, function(err, list) {
+			res.render('post_issue', {
+				'kans': list
+			})
+		})
+	}
 
-	
 }
 
 /**
@@ -133,7 +141,6 @@ exports.user = function(req, res) {
  */
 
 exports.KAN = function(req, res) {
-	//res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID)
 	res.render('kan', null)
 }
 
@@ -142,7 +149,6 @@ exports.KAN = function(req, res) {
  */
 
 exports.issue = function(req, res) {
-	//res.end('username: ' + req.params.username + '<br/>kanID: ' + req.params.kanID + '<br/>issue: ' + req.params.issue)
 	res.render('issue', null)
 }
 

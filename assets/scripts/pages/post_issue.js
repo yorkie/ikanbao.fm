@@ -1,21 +1,20 @@
 
 /* post issue */
 
-seajs.use(['./post_issue_mgr'], function(Manager) {
+seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader) {
 
-	//var editor = new Editor()
-	//editor.render('myEditor')
+	console.log(arguments)
 
-	var manager = new Manager({
-		userRole: ENV.userRole
-	})
-
-	if (ENV.userRole == 0) {
+	if (ENV.userRole == 1) {
 		// 管理员
+		var editor = new Editor()
+		editor.render('myEditor')
 	}
 
 	if (ENV.userRole == 1) {
 		// 高级用户
+		var uploader = new Uploader('pdf')
+		uploader.render('myEditor')
 	}
 
 	else {

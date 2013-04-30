@@ -8,24 +8,25 @@ seajs.config({
 		'bootstrap': prefix + '/scripts/lib/bootstrap.min.js',
 		'holder': prefix + '/scripts/lib/holder.js'
 	},
+	base: '/scripts',
 	vars: {
 		// TODO
 	},
 	preload: [
 		'jquery',
 		'bootstrap',
-		'holder'
+		'holder',
+		'plugins/plugin-shim',
+		'plugins/plugin-text',
+		'plugins/plugin-nocache'
 	],
 	plugins: [
-		'shim',
-		'text',
-		'combo',
-		'no-cache'
+		// TODO
 	],
 	comboSyntax: ['?', '&'],
+	comboExclueds: /widgets\/ueditor\.js/,
 	shim: {
 		// TODO
 	},
-	base: '/scripts/',
 	debug: true
-})
+});

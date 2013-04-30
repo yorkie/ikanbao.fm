@@ -3,9 +3,7 @@
 
 seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader) {
 
-	console.log(arguments)
-
-	if (ENV.userRole == 1) {
+	if (ENV.userRole == 0) {
 		// 管理员
 		var editor = new Editor()
 		editor.render('myEditor')

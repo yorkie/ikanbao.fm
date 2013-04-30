@@ -24,7 +24,7 @@ seajs.config({
 		// TODO
 	],
 	comboSyntax: ['?', '&'],
-	comboExclueds: /widgets\/ueditor\.js/,
+	comboExclueds: /.*/,
 	shim: {
 		// TODO
 	},

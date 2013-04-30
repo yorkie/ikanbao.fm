@@ -32,11 +32,12 @@ app.configure(function() {
   app.use(express.methodOverride())
   app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
+  
   app.use(filterHandler)
   app.use(localsHandler)
   app.use(auth.middleware())
   app.use(afterAuthenticatedHandler)
-  
+
   function filterHandler(req, res, next) {
     // TODO
     next()

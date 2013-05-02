@@ -35,7 +35,7 @@ define('widgets/uploader', ['lib/swfupload'], function(require, exports, module)
 				'border': oldElem.css('border'),
 				'padding': oldElem.css('padding')
 			})
-			var btn = $('<a class="btn btn-large btn-primary">上传本期报刊(PDF)</a><div id="swfupload-btn"></div>')
+			var btn = $('<a class="btn btn-large btn-primary" data-loading-text="正在上传...">上传本期报刊(PDF)</a><div id="swfupload-btn"></div>')
 			btn.appendTo(newElem)
 			oldElem.replaceWith(newElem)
 
@@ -66,11 +66,13 @@ define('widgets/uploader', ['lib/swfupload'], function(require, exports, module)
 				},
 
 				dialogComplete: function(fileId, queuedId, length) {
-					// this.startUpload()
+					if (length != 0) {
+						this.startUpload()
+					}
 				},
 
 				uploadStart: function(file) {
-					// TODO
+					btn.button('loading')
 				},
 
 				uploadProgress: function(file, curr, total) {
@@ -82,7 +84,7 @@ define('widgets/uploader', ['lib/swfupload'], function(require, exports, module)
 				},
 
 				uploadSuccess: function(file, json, res) {
-					// TODO
+					alert('上传完毕')
 				},
 
 				uploadComplete: function(file) {

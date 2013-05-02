@@ -28,7 +28,7 @@ app.configure(function() {
   
   app.use(express.cookieParser())
   app.use(express.session({ secret: 'htuayreve'}))
-  app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/assets/photos/tmp' }))
+  app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/assets/upload-files/tmp' }))
   app.use(express.methodOverride())
   app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
@@ -92,6 +92,9 @@ app.configure(function() {
     },
     '/go': {
       get: routes.go
+    },
+    '/post': {
+      get: routes._404
     }
   })
 

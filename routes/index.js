@@ -151,6 +151,13 @@ exports.issue = function(req, res) {
 	res.render('issue', null)
 }
 
+/**
+ * GET 404
+ */
+
+exports._404 = function(req, res) {
+	res.end('404')
+}
 
 
 // ==========================================

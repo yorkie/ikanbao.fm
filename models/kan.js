@@ -30,6 +30,7 @@ Models.define('Kan', function(out, Db, cache) {
 		var db = Db.createConnection(connStr)
 		db.model('Kan').create(kan, function(err, kan) {
 			if (err) throw err
+			fn.call(this, kan)
 			db.close()
 		})
 	}

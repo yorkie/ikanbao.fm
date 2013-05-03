@@ -14,7 +14,7 @@ block append Content
 				.issue-title
 					label(for='issue-title') 标题
 					input(type='text', id='issue-title', value='', placeholder='可以为空')
-				.issue-content
+				.issue-content#issue-content
 					// 这里会根据 刊类型(主/副) 来具体确定编辑器的形式
 					textarea#myEditor
 						| 欢迎使用
@@ -22,20 +22,27 @@ block append Content
 					.btn-group
 						a.btn(href='/#{user.name}/kan') 取消
 					#post-btn.btn-group.pull-right
-						a.btn.btn-success 发布
+						a.btn.btn-success(data-loading-text="正在发布..") 发布
 					#preview-btn.btn-group.pull-right
 						a.btn 预览
 
 			.sidebar.span3
 				p
-					label(for='kanID') 发布到
-					select
+					label(for='issue-kanId') 发布到
+					select#issue-kanId
 						for kan in kans
 							option=kan.name
 				p
 					label 发布时间
 					input(type='text', value='马上发布', disabled)
 
+
+	//- Modals
+	#myModal-01.modal.hide.fade
+		.modal-body
+			p  你还没有上传任何期刊的内容
+		.modal-footer
+			button.btn(type='button', data-dismiss='modal') 知道了
 
 block Module
 	script

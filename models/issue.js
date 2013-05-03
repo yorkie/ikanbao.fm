@@ -26,10 +26,11 @@ Models.define('Issue', function(out, Db, cache) {
 	 * 创建期刊
 	 */
 
-	out.create = function(issue) {
+	out.create = function(issue, fn) {
 		var db = Db.createConnection(connStr)
-		db.model('Issue').create(kan, function(err, kan) {
+		db.model('Issue').create(issue, function(err, issue) {
 			if (err) throw err
+			fn.call(this, issue)
 			db.close()
 		})
 	}

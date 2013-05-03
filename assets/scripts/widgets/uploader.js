@@ -17,7 +17,7 @@ define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, expor
 		}
 	}
 
-	PdfUploader.prototype.render = function(elemId) {
+	PdfUploader.prototype.render = function(elemId, fn) {
 		var self = this
 		this.targetElem = $('#' + elemId)
 		this.targetElem.height(this.option.frameHeight)
@@ -30,8 +30,8 @@ define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, expor
 				'text-align': 'center',
 				'vertical-align': 'middle',
 				'line-height': oldElem.css('height'),
-				'height': oldElem.height(),
-				'width': oldElem.width(),
+				'height': '100%',
+				'width': '95%',
 				'border': oldElem.css('border'),
 				'padding': oldElem.css('padding')
 			})
@@ -84,15 +84,33 @@ define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, expor
 				},
 
 				uploadSuccess: function(file, json, res) {
-					if (res) {
-						var d = JSON.parse(json)
-						PDFJS.workerSrc = '/scripts/widgets/pdfjs.worker.js'
-						console.log(PDFJS.getDocument(d.path))
-					}
+					if (!res) return
+					var d = JSON.parse(json)
+					PDFJS.workerSrc = '/scripts/lib/pdf.js'
+					PDFJS.getDocument(d.path).then(function(pdf) {
+						pdf.getPage(1).then(function(page) {
+
+	    				var viewport = page.getViewport(1.0);
+	    				var canvas = document.createElement('canvas');
+	    				canvas.height = viewport.height;
+	    				canvas.width = viewport.width;
+	    				canvas.style.width = '100%';
+	    				newElem.html(canvas);
+	    				
+	    				var renderContext = {
+	      				canvasContext: canvas.getContext('2d'),
+	      				viewport: viewport
+	    				};
+	    				page.render(renderContext);
+
+	    			})
+					})
+					fn(d);
+
 				},
 
 				uploadComplete: function(file) {
-					// TODO
+					fn.call(this, file)
 				}
 
 			},
@@ -120,7 +138,8 @@ define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, expor
 				'file_dialog_complete_handler': handlers.dialogComplete,
 				'upload_start_handler': handlers.uploadStart,
 				'upload_progress_handler': handlers.uploadProgress,
-				'upload_success_handler': handlers.uploadSuccess
+				'upload_success_handler': handlers.uploadSuccess,
+				'upload_complete_handler': handlers.uploadComplete
 			})
 		}
 		displayUI()

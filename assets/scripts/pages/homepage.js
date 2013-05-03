@@ -39,7 +39,6 @@ seajs.use([], function() {
 	/* Start */
 
 	var pageType = location.pathname.match(/(kan|subscribe)\/{0,1}$/)
-	console.log(pageType)
 	if (!pageType || !pageType[1])
 		return userProfileRender()
 	if (pageType[1] === 'kan')

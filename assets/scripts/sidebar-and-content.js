@@ -1,5 +1,5 @@
 
-/* startup */
+/* sidebar and content */
 
 seajs.use(['utils/fixed'], function(Fixed) {
 	

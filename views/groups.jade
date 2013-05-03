@@ -4,11 +4,16 @@ extend shared/sidebar-and-content
 
 block append head
   
-  link(rel='stylesheet', href='/css/groups.css')
-  script
-    ENV.pageID = 2
+	link(rel='stylesheet', href='/css/groups.css')
+	script
+		ENV.pageID = 2
 
 block append content
 
-  for item in groups
-    div= item
+	ul.thumbnails
+		
+		for item in groups	
+			li.span2
+				a.thumbnail(href='##{item}')
+					img(data-src='holder.js/160x140', alt='')
+					center #{item}

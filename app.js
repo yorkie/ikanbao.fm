@@ -33,13 +33,20 @@ app.configure(function() {
   app.use(express.logger('dev'))
   app.use(express.static(__dirname + '/assets'))
   
-  app.use(filterHandler)
   app.use(localsHandler)
+  app.use(filterHandler)
   app.use(auth.middleware())
   app.use(afterAuthenticatedHandler)
 
   function filterHandler(req, res, next) {
-    // TODO
+    if (req.url == '/login')
+      res.redirect('/login/')
+    if (req.url == '/login/')
+      res.locals.page.title = '登陆 - ikanbao.fm'
+    if (req.url == '/register')
+      res.redirect('/register/')
+    if (req.url == '/register/')
+      res.locals.page.title = '注册 - ikanbao.fm'
     next()
   }
 
@@ -47,7 +54,9 @@ app.configure(function() {
     res.locals.loginFormFieldName = auth.password.loginFormFieldName()
     res.locals.passwordFormFieldName = auth.password.passwordFormFieldName()
     res.locals.user = { isAuthenticated: false }
-    res.locals.page = {}
+    res.locals.page = {
+      'title': '爱看报(iKanbao.fm)'
+    }
     next()
   }
 
@@ -94,7 +103,7 @@ app.configure(function() {
       get: routes.go
     },
     '/post': {
-      get: routes._404
+      get: routes._404  // potential risk
     }
   })
 

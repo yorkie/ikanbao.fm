@@ -1,7 +1,7 @@
 
 /* post issue */
 
-seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader) {
+seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader, PDF) {
 
 	if (ENV.userRole == 0) {
 		// 管理员
@@ -18,5 +18,18 @@ seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader) {
 	else {
 		// 个人用户
 	}
+
+	var buttons = {
+		post: $('post-btn'),
+		preview: $('preview-btn')
+	}
+
+	buttons.post.on('click', function(e) {
+		// TODO
+	})
+
+	buttons.preview.on('click', function(e) {
+		// TODO
+	})
 
 })

@@ -4,6 +4,7 @@
  */
 
 exports.redirect = function(req, res) {
+	res.locals.page.title = '正在为你跳转...'
 	res.redirect(req.path + '/')
 }
 
@@ -30,6 +31,7 @@ exports.history = function(req, res) {
 		return
 	}
 
+	res.locals.page.title = '历史记录'
 	res.locals.page.name = 'history'
 	res.end('history')
 }
@@ -47,6 +49,7 @@ exports.groups = function(req, res) {
 
 	Models.use('Groups').view_groups(function(err, data) {
 		if (err) throw err
+		res.locals.page.title = '报刊分类 - ikanbao.fm'
 		res.render('groups', {
 			groups: data
 		})
@@ -65,6 +68,7 @@ exports.settings = function(req, res) {
 		return
 	}
 
+	res.locals.page.title = '设置 - ikanbao.fm'
 	res.locals.page.name = 'settings'
 	res.render('settings')
 }
@@ -89,6 +93,7 @@ exports.post = function(req, res) {
 	/* post kan */
 	function post_kan() {
 		Models.use('Groups').getList(function(err, list) {
+			res.locals.page.title = '创建新报刊 - ikanbao.fm'
 			res.render('post_kan', {
 				'groups': list
 			})
@@ -98,6 +103,7 @@ exports.post = function(req, res) {
 	/* post issue */
 	function post_issue() {
 		Models.use('Kan').find({'user': req.user.name}, function(err, list) {
+			res.locals.page.title = '发布期刊 － ikanbao.fm'
 			res.render('post_issue', {
 				'kans': list
 			})

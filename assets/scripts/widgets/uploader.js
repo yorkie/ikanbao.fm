@@ -1,7 +1,7 @@
 
 /* PDF Uploader */
 
-define('widgets/uploader', ['lib/swfupload'], function(require, exports, module) {
+define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, exports, module) {
 
 	/* PDF Uploader */
 
@@ -84,7 +84,11 @@ define('widgets/uploader', ['lib/swfupload'], function(require, exports, module)
 				},
 
 				uploadSuccess: function(file, json, res) {
-					alert('上传完毕')
+					if (res) {
+						var d = JSON.parse(json)
+						PDFJS.workerSrc = '/scripts/widgets/pdfjs.worker.js'
+						console.log(PDFJS.getDocument(d.path))
+					}
 				},
 
 				uploadComplete: function(file) {

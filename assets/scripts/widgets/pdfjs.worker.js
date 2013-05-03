@@ -1,0 +1,3 @@
+
+/* PDFJS Common Worker */
+

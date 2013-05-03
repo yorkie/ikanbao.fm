@@ -19,17 +19,28 @@ seajs.use(['widgets/ueditor', 'widgets/uploader'], function(Editor, Uploader, PD
 		// 个人用户
 	}
 
-	var buttons = {
-		post: $('post-btn'),
-		preview: $('preview-btn')
+	var buttonsGroup = $('.issue-btns')
+	var handlers = {
+		// post an issue
+		post: function(e) {
+
+			var dataForPost = {
+				'title': null,
+				'type': null,
+				'content': null,
+				'date': null,
+				'kanId': null
+			}
+			// TODO
+
+		},
+		// preview the current issue
+		preview: function(e) {
+
+		}
 	}
 
-	buttons.post.on('click', function(e) {
-		// TODO
-	})
+	buttonsGroup.delegate('#post-btn', 'click', handlers.post)
+	buttonsGroup.delegate('#preview-btn', 'click', handlers.preview)
 
-	buttons.preview.on('click', function(e) {
-		// TODO
-	})
-
-})
+});

@@ -4,3 +4,19 @@
 .kan-container {
 	margin-top: 20px;
 }
+
+.kan-thumbnails {
+	background: #fff;
+	border: 1px solid #c7c7c7;
+	padding: 20px 0;
+	margin-left: 20px;
+}
+
+.kan-thumbnail h5 {
+	text-align: center;
+	color: #444;
+}
+
+.kan-thumbnail h5:hover {
+	text-decoration: none !important;
+}

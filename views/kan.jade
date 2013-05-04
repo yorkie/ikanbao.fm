@@ -10,19 +10,36 @@ block append Content
 		.row
 
 			// kan's Info
-			.span2
-				p
-					img(data-src='holder.js/200x200')
-				h3= kan.name
-				p=  kan.description
-				p=  kan.tags
+			.span2.offset1
+				#kan-info
+					p
+						a(href='')
+							img.img-polaroid(data-src='holder.js/170x200')
+					h3= kan.name
+					p 描述: #{kan.description}
+					p 标签: #{kan.tags}
 
 			// issues' list
 			.span8
-				ul.thumbnails
+				ul.kan-thumbnails.thumbnails
+					
+					-var i = 1
 					for issue in issues
-						li.span2
-							a.thumbnail(href='#{issue.content}', target='_blank')= issue
+						li(style='width:20%')
+							a.kan-thumbnail.thumbnail(href='#')
+								img(data-src='holder.js/140x150')
+								h5 第#{i++}期
+
+					// 分页Component
+					.clearfix
+					.pagination.pagination-centered
+						ul
+							li.disabled
+								a &laquo;
+							li.active
+								a 1
+							li.disabled
+								a &raquo;
 
 
 block Module

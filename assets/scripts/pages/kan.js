@@ -1,8 +1,9 @@
 
 /* kan */
 
-seajs.use([], function() {
+seajs.use(['utils/fixed'], function(Fixed) {
 
-	// TODO
+	// fixed
+	Fixed('#kan-info', 20)
 
 })

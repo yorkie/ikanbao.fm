@@ -13,7 +13,8 @@ Models.define('Kan', function(out, Db, cache) {
 		group: String,
 		tags: String,
 		description: String,
-		cover: String
+		cover: String,
+		issuesNum: Number
 	})
 	KanSchema.index({name: 1, group: 1})
 	Db.model('Kan', KanSchema)
@@ -52,15 +53,38 @@ Models.define('Kan', function(out, Db, cache) {
 	}
 
 	/**
+	 * 查询报刊 继承连接
+	 */
+
+	var find_noConnection =
+	out.find_noConnection = function (db, criterion, fn) {
+		db.model('Kan').find(criterion).exec(function(err, kan) {
+			if (err) throw err;
+			fn(err, kan);
+		})
+	}
+
+	/**
+	 * 查询报刊(One) 继承连接
+	 */
+
+	var findOne_noConnection = 
+	out.findOne_noConnection = function (db, criterion, fn) {
+		db.model('Kan').findOne(criterion).exec(function(err, kan) {
+			if (err) throw err;
+			fn(err, kan);
+		})
+	}
+
+	/**
 	 * 查询报刊
 	 */
 
 	out.find = function(criterion, fn) {
 		var db = Db.createConnection(connStr)
-		db.model('Kan').find(criterion).exec(function(err, kan) {
-			if (err) throw err
-			db.close()
+		find_noConnection(db, criterion, function (err, kan) {
 			fn(err, kan)
+			db.close()
 		})
 	}
 
@@ -68,14 +92,12 @@ Models.define('Kan', function(out, Db, cache) {
 	 * 查询报刊(One)
 	 */
 
-	out.findOne = function(criterion, fn) {
+	out.findOne = function (criterion, fn) {
 		var db = Db.createConnection(connStr)
-		db.model('Kan').findOne(criterion).exec(function(err, kan) {
-			if (err) throw err
-			db.close()
+		findOne_noConnection(db, criterion, function (err, kan) {
 			fn(err, kan)
+			db.close()
 		})
 	}
-
 
 })

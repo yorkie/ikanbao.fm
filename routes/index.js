@@ -1,4 +1,6 @@
 
+var dateFormat = require('../lib/utils/date-format')
+
 /**
  * NULL
  */
@@ -152,7 +154,7 @@ exports.KAN = function(req, res) {
 		Models.use('Issue').find({ 'kanId': req.params.kanId }, function(err, issues) {
 			res.render('kan', {
 				'kan': kan,
-				'issues': issues
+				'issues': issues.reverse()
 			})
 		})
 	})

@@ -13,7 +13,6 @@ Models.define('Issue', function(out, Db, cache) {
 		content: String,	// 主刊：HTML, 副刊：PDF
 		date: Date,				// 发布时间
 		kanId: String,		// 所属的报刊
-
 	})
 	IssueSchema.index({kan: 1})
 	Db.model('Issue', IssueSchema)

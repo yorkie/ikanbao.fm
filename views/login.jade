@@ -53,6 +53,9 @@ block append Content
           input(type='password', name=passwordFormFieldName, placeholder='密码', tabindex='2')
         p
           div.btn-group
-            button#submit.btn.btn-success 登陆
+            button#submit.btn.btn-success(data-loading-text='正在登陆..') 登陆
           div.btn-group
             button.btn.visible-phone 免费注册
+
+block Module
+  script(src='/scripts/pages/login.js')

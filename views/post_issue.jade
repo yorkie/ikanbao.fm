@@ -31,7 +31,8 @@ block append Content
 					label(for='issue-kanId') 发布到
 					select#issue-kanId
 						for kan in kans
-							option=kan.name
+							option(value='#{kan.name}', data-group='#{kan.group}') 
+								| #{kan.name}---#{kan.group}
 				p
 					label 发布时间
 					input(type='text', value='马上发布', disabled)

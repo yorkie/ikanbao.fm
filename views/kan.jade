@@ -1,0 +1,29 @@
+extend shared/skeleton
+
+block append Head
+
+	link(rel='stylesheet', href='/css/kan.css')
+
+block append Content
+
+	.kan-container.container
+		.row
+
+			// kan's Info
+			.span2
+				p
+					img(data-src='holder.js/200x200')
+				h3= kan.name
+				p=  kan.description
+				p=  kan.tags
+
+			// issues' list
+			.span8
+				ul.thumbnails
+					for issue in issues
+						li.span2
+							a.thumbnail(href='#{issue.content}', target='_blank')= issue
+
+
+block Module
+	script(src='/scripts/pages/kan.js')

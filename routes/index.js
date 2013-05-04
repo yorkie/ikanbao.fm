@@ -146,7 +146,17 @@ exports.user = function(req, res) {
  */
 
 exports.KAN = function(req, res) {
-	res.render('kan', null)
+
+	var id = req.params.kanId
+	Models.use('Kan').findOne({ 'name': req.params.kanId }, function(err, kan) {
+		Models.use('Issue').find({ 'kanId': req.params.kanId }, function(err, issues) {
+			res.render('kan', {
+				'kan': kan,
+				'issues': issues
+			})
+		})
+	})
+
 }
 
 /**

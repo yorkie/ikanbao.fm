@@ -116,7 +116,7 @@ app.configure(function() {
       '/subscribe': {
         get: routes.user
       },
-      '/:kanID': {
+      '/:kanId': {
         get: routes.KAN,
         '/:issue': {
           get: routes.issue

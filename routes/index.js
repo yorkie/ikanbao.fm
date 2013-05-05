@@ -162,11 +162,13 @@ exports.KAN = function(req, res) {
 }
 
 /**
- * GET {username}/{kanID}/{issue}/
+ * GET {username}/{kanId}/{issue}/
  */
 
 exports.issue = function(req, res) {
-	res.render('issue', null)
+	res.render('issue', {
+		'params': req.params
+	})
 }
 
 /**

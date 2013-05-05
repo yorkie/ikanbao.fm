@@ -6,7 +6,46 @@ block append Head
 
 block append Content
 
-	.row abc for testing.
+	.issue-container.container
+		
+		.breadcrumb-container
+			
+			ul.breadcrumb#issue-breadcrumb
+				li
+					a(href='/#{params.username}')
+						i.icon.icon-user
+						| &nbsp;#{params.username}
+					span.divider /
+				li
+					a(href='/#{params.username}/#{params.kanId}')
+						i.icon.icon-book
+						| &nbsp;#{params.kanId}
+					span.divider /
+				li.active
+					| 第#{params.issue.slice(0, -2)}期
+
+				li.pull-right(style='margin-top:-3px')
+					.btn-group
+						a.btn.btn-small
+							i.icon.icon-info-sign
+							| &nbsp;关于
+						a.btn.btn-small
+							i.icon.icon-wrench
+							| &nbsp;设置
+
+		// 内容
+		.issue-canvas-container
+			canvas#mainCanvas
+
+		#reader-controller
+			span.rc-btn.prev-btn
+				i.icon.icon-chevron-left
+			span.rc-btn.list-btn
+				i.icon.icon-th-list
+			span.rc-btn.next-btn
+				i.icon.icon-chevron-right
+			span.rc-btn.toggle-btn
+				i.icon.icon-step-backward
 
 block Module
 	script(src='/scripts/pages/issue.js')

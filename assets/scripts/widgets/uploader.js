@@ -1,7 +1,7 @@
 
 /* PDF Uploader */
 
-define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, exports, module) {
+define('widgets/uploader', ['lib/swfupload', 'utils/pdf-reader'], function(require, exports, module) {
 
 	/* PDF Uploader */
 
@@ -85,28 +85,16 @@ define('widgets/uploader', ['lib/swfupload', 'lib/pdf'], function(require, expor
 
 				uploadSuccess: function(file, json, res) {
 					if (!res) return
-					var d = JSON.parse(json)
-					PDFJS.workerSrc = '/scripts/lib/pdf.js'
-					PDFJS.getDocument(d.path).then(function(pdf) {
-						pdf.getPage(1).then(function(page) {
-
-	    				var viewport = page.getViewport(1.0);
-	    				var canvas = document.createElement('canvas');
-	    				canvas.height = viewport.height;
-	    				canvas.width = viewport.width;
-	    				canvas.style.width = '100%';
-	    				newElem.html(canvas);
-	    				
-	    				var renderContext = {
-	      				canvasContext: canvas.getContext('2d'),
-	      				viewport: viewport
-	    				};
-	    				page.render(renderContext);
-
-	    			})
+					var data = JSON.parse(json)
+					var PDFReader = require('utils/pdf-reader')
+					var reader = new PDFReader(data.path, 1.0)
+					reader.getPage(1, function (page) {
+						var canvas = document.createElement('canvas');
+						canvas.style.width = '100%';
+						newElem.html(canvas);
+						page.render(canvas);
 					})
-					fn(d);
-
+					fn(data);
 				},
 
 				uploadComplete: function(file) {

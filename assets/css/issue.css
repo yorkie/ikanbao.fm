@@ -1,0 +1,37 @@
+
+/* issue */
+
+.issue-container {
+	margin-top: 15px;
+}
+
+.issue-canvas-container {
+	background: #fff;
+	border: 1px solid #d8d8d8;
+	box-shadow: 1px 1px 5px #eee;
+}
+
+/* Reader Controller */
+
+#reader-controller {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.1);
+	bottom: 100px;
+	left: 0px;
+	padding: 5px 15px 5px 30px;
+}
+
+.rc-btn {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	margin: 0 5px;
+}
+
+.rc-btn.hover {
+	background: #ccc;
+}

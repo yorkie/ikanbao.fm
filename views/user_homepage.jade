@@ -46,7 +46,11 @@ block append Content
 						td=host.email
 					tr
 						td 帐户等级
-						td=host.role
+						td
+							case parseInt(host.role)
+								when 0: 系统管理员
+								when 1: 高级用户
+								when 2: 普通用户
 
 		.homepage-content.homepage-kans
 			ul.thumbnails

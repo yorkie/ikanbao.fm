@@ -20,7 +20,7 @@ block append Content
 					p 标签: #{kan.tags}
 					p
 						.btn-group
-							a.btn @创刊人
+							a.btn(href='/#{kan.user}', target='_blank') @创刊人
 							a.btn 编辑
 
 			// issues' list
@@ -31,10 +31,10 @@ block append Content
 					for issue in issues
 						i = issue.id.match(/\d+$/)[0]
 						li(style='width:20%')
-							a.kan-thumbnail.thumbnail(href='#{kan.name}/#{i}')
+							a.kan-thumbnail.thumbnail(href='#{kan.name}/#{i}th')
 								img(data-src='holder.js/140x140')
 								h5 第#{i}期
-								p #{issue.date.format('yyyy年m月d日')}
+								//p #{issue.date.format('yyyy年m月d日')}
 
 					// 分页Component
 					.clearfix

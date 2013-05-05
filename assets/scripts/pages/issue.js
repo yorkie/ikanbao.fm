@@ -4,7 +4,7 @@ seajs.use(['utils/pdf-reader'], function(PDFReader) {
 	// PDF related codes
 	var args = location.pathname.slice(1, -2).split('/');
 	var path = '/upload-files/pdf/' + args[1] + '.' + args[2] + '.pdf';
-	var currentPageNum = 1;
+	var currentPageNum = parseInt(location.hash.slice(1));
 
 	// PDF Reader
 	var reader = new PDFReader(path);

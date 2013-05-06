@@ -44,12 +44,12 @@ define('utils/pdf-reader', ['lib/pdf'], function (require, exports, module) {
 			pdf.getPage(num).then(function (page) {
 				var viewport = page.getViewport(self.viewport)
 				fn({
-					render: function(canvas) {
+					render: function(canvas, _viewport) {
 						canvas.height = viewport.height;
 						canvas.width = viewport.width;
 						page.render({
 							'canvasContext': canvas.getContext('2d'),
-							'viewport': viewport
+							'viewport': _viewport || viewport
 						})
 					}
 				})

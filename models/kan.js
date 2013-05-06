@@ -46,10 +46,21 @@ Models.define('Kan', function(out, Db, cache) {
 
 	/**
 	 * 修改已有报刊参数
+	 * @param criterion 筛选条件，选择出需要更新的Kan
+	 * @param values 要更新的数据
 	 */
 
-	out.update = function(kan, fn) {
-		// TODO
+	out.update = function(criterion, values) {
+		var db = Db.createConnection(connStr)
+		findOne_noConnection(db, criterion, function (err, kan) {
+			if (err) throw err
+			for (var key in values) {
+				kan[key] = values[key];
+			}
+			kan.save(function () {
+				db.close()
+			})
+		})
 	}
 
 	/**

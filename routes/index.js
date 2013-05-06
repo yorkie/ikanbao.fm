@@ -1,4 +1,5 @@
 
+var util = require('util')
 var dateFormat = require('../lib/utils/date-format')
 
 /**
@@ -152,9 +153,12 @@ exports.KAN = function(req, res) {
 	var id = req.params.kanId
 	Models.use('Kan').findOne({ 'name': req.params.kanId }, function(err, kan) {
 		Models.use('Issue').find({ 'kanId': req.params.kanId }, function(err, issues) {
-			res.render('kan', {
-				'kan': kan,
-				'issues': issues.reverse()
+			Models.use('Groups').getList(function(err, list) {
+				res.render('kan', {
+					'kan': kan,
+					'issues': issues.reverse(),
+					'groups': list
+				})
 			})
 		})
 	})
@@ -166,6 +170,10 @@ exports.KAN = function(req, res) {
  */
 
 exports.issue = function(req, res) {
+	if (!req.params[1] || req.params[1] == '') {
+		var destinationURL = util.format('%s%s1', req.path, (req.params[0] === '/' ? '' : '/'));
+		return res.redirect(destinationURL);
+	}
 	res.render('issue', {
 		'params': req.params
 	})
@@ -179,6 +187,16 @@ exports._404 = function(req, res) {
 	res.end('404')
 }
 
+// ==========================================
+// ====== Pages =============================
+// ==========================================
+
+/**
+ * Pages
+ */
+
+exports.pages = require('./pages')
+
 
 // ==========================================
 // ====== POST ==============================
@@ -191,6 +209,5 @@ exports._404 = function(req, res) {
 exports.api = function(req, res) {
 	require('./api')(req, res)
 }
-
 
 

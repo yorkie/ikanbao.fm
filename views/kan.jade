@@ -16,12 +16,49 @@ block append Content
 						a(href='')
 							img.img-polaroid(data-src='holder.js/170x200')
 					h3 #{kan.name}
-					p 描述: #{kan.description}
-					p 标签: #{kan.tags}
-					p
+					p.group 分类：
+						a(href='/groups/#{kan.group}', target='_blank') #{kan.group}
+					p.desc 描述：
+						-if (kan.description == '')
+							| 无
+						-else
+							| #{kan.description}
+					p.tags 标签：
+						-if (kan.tags == '')
+							| 无
+						-else
+							| #{kan.tags}
+					p.creator 创刊人：
+						a(href='/#{kan.user}/kan') #{kan.user}
+					p.btns
 						.btn-group
-							a.btn(href='/#{kan.user}', target='_blank') @创刊人
-							a.btn 编辑
+							a.btn.edit-btn(class='#{user.name==kan.user?'':'disabled'}')
+								i.icon.icon-pencil
+								| &nbsp;更改
+						.btn-group
+							a.btn.btn-primary.subscribe-btn
+								i.icon.icon-star.icon-white
+								| &nbsp;订阅
+
+				// Modal
+				#kan-info-modal.modal.hide.fade
+					.modal-header
+						button.close(type='button', data-dismiss='modal') x
+						h3 更改报刊：#{kan.name}
+					.modal-body
+						p.group 分类：
+							select
+								each g in groups
+									-if (g == kan.group)
+										option(value='#{g}', selected)= g
+									-else
+										option(value='#{g}')= g
+						p.desc 描述：
+							textarea #{kan.description}
+						p.tags 标签：
+							textarea #{kan.tags}
+					.modal-footer
+						button.btn.btn-primary(type='button') 保存
 
 			// issues' list
 			.span8
@@ -30,8 +67,8 @@ block append Content
 					-var i = 0
 					for issue in issues
 						i = issue.id.match(/\d+$/)[0]
-						li(style='width:20%')
-							a.kan-thumbnail.thumbnail(href='#{kan.name}/#{i}th')
+						li(style='width:150px;')
+							a.kan-thumbnail.thumbnail(href='/#{kan.user}/#{kan.name}/#{i}th')
 								img(data-src='holder.js/140x140')
 								h5 第#{i}期
 								//p #{issue.date.format('yyyy年m月d日')}
@@ -49,4 +86,7 @@ block append Content
 
 
 block Module
+	script
+		ENV.page = ENV.page || {};
+		ENV.page.kanId = '#{kan.name}'
 	script(src='/scripts/pages/kan.js')

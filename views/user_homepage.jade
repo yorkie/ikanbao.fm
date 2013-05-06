@@ -53,16 +53,16 @@ block append Content
 								when 2: 普通用户
 
 		.homepage-content.homepage-kans
-			ul.thumbnails
+			ul.thumbnails.homepage-kans-thumbnails
 				each kan, i in host.kans
-					li.span3
-						div.thumbnail
+					li
+						div.thumbnail.homepage-kans-thumbnail
 							a(href='/#{host.name}/#{kan.name}')
-								img(data-src='holder.js/300x300', alt='')
+								img(data-src='holder.js/200x200', alt='')
 							.caption
 								a(href='/#{host.name}/#{kan.name}')
 									h3= kan.name
-								p=  kan.description ? kan.description : '暂无描述'
+								p(title='#{kan.description}')= kan.description ? kan.description : '暂无描述'
 
 		.homepage-content.homepage-subscribes
 			| 订阅

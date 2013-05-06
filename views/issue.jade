@@ -38,15 +38,24 @@ block append Content
 			canvas#mainCanvas
 
 		#reader-controller
-			span.rc-btn.list-btn
+			span.rc-btn.list-btn(data-toggle='tooltip', data-placement='top', data-original-title='期刊目录')
 				i.icon.icon-th-list
-			span.rc-btn.prev-btn
+			span.rc-btn.prev-btn(data-toggle='tooltip', data-placement='top', data-original-title='上一页')
 				i.icon.icon-chevron-left
 			span.rc-label#rc-page-nav
-			span.rc-btn.next-btn
+			span.rc-btn.next-btn(data-toggle='tooltip', data-placement='top', data-original-title='下一页')
 				i.icon.icon-chevron-right
-			span.rc-btn.toggle-btn
+			span.rc-btn.toggle-btn(data-toggle='tooltip', data-placement='top', data-original-title='收起')
 				i.icon.icon-step-backward
+
+		#issue-modal.modal.hide.fade(tabindex='-1', role='dialog')
+			.modal-header
+				button.close(type='button', data-dismiss='modal') x
+				h3 期刊目录
+			.modal-body
+				p 正在为你加载目录，请稍等。。。
+			.modal-footer
+				.btn.btn-success 回到test1
 
 block Module
 	script(src='/scripts/pages/issue.js')

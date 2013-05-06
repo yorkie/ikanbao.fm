@@ -41,13 +41,14 @@
 
 .homepage-container {
 	margin-top: 5px;
+	margin-bottom: 20px;
 	background: #fff;
 	border: 1px solid #ccc;
 	overflow: hidden;
 }
 
 .homepage-content {
-
+	/* TODO */
 }
 
 .homepage-profile table {
@@ -58,3 +59,18 @@
 .homepage-kans .thumbnails {
 	margin: 20px auto;
 }
+
+.homepage-kans-thumbnail {
+	width: 200px;
+}
+
+.homepage-kans-thumbnail p {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-moz-binding: url("ellipsis.xml#ellipsis");
+}
+

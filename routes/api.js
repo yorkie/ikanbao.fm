@@ -41,24 +41,33 @@ function Upload() {
 function Kan() {
 
 	if (req.route.method == 'post') {
-		var kan = Models.use('Kan')
-		var data = req.body
-		data.user = req.user.name
-		kan.create(data, function() {
-			// TODO
-			res.end()
-		})
+
+		var kan = Models.use('Kan');
+		var data = req.body;
+		if (!req.params[0] || req.params[0] == '') {
+			data.user = req.user.name;											// 创建新刊物
+			kan.create(data, function () {
+				res.end();
+			})
+		}
+		else {
+			kan.update({ 'name': req.params[0] }, data);		// 修改已有刊物信息
+			res.end();
+		}
+		
 	}
 
-	if (req.route.method == 'get') {
+	else if (req.route.method == 'get') {
 		var kan = Models.use('Kan')
 		kan.find(req.query, function(err, result) {
 			res.json(200, result)
-			res.end()
+			res.end();
 		})
 	}
 
-	res.end()
+	else {
+		res.end();
+	}
 
 }
 

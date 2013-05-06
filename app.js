@@ -111,6 +111,14 @@ app.configure(function() {
   })
 
   app.map({
+    '/pages':{
+      '/404': {
+        get: routes.pages['404']
+      }
+    }
+  })
+
+  app.map({
     '/:username': {
       get: routes.user,
       '/kan': {

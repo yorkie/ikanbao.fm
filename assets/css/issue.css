@@ -69,3 +69,24 @@
 .rc-btn.hover {
 	background: #ccc;
 }
+
+/* modal */
+
+#issue-modal .modal-body {
+	padding-top: 40px;
+}
+
+#issue-modal .modal-body canvas {
+	border: 1px solid #ccc;
+	margin: 5px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#issue-modal .modal-body canvas.current {
+	border-color: #999;
+}
+
+#issue-modal .modal-body canvas:hover {
+	border-color: #777;
+}

@@ -16,3 +16,14 @@
 	text-align: center;
 	color: #444;
 }
+
+#kan-info {
+	width: 170px;
+}
+
+#kan-info-modal textarea {
+	resize: none;
+	height: 65px;
+	width: 96%;
+	margin-top: 5px;
+}

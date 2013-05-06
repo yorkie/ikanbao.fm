@@ -134,11 +134,19 @@ define('widgets/uploader', ['lib/swfupload', 'utils/pdf-reader'], function(requi
 
 	}
 
+	var ImageUploader = function (option) {
+		for (property in option)
+			this.option[property] = option[property];
+	}
+
 	/* exports */
 
 	module.exports = exports = function(type, option) {
 		if (type == 'pdf') {
-			return new PdfUploader(option)
+			return new PdfUploader(option);
+		}
+		if (type == 'img') {
+			return new ImageUploader(option);
 		}
 	}
 

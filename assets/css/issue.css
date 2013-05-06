@@ -1,4 +1,11 @@
 
+/* keyFrames */
+
+@keyframes fadeOut {
+
+}
+
+
 /* issue */
 
 .issue-container {
@@ -15,10 +22,37 @@
 
 #reader-controller {
 	position: fixed;
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0,0,0,0.1);
 	bottom: 100px;
 	left: 0px;
 	padding: 5px 15px 5px 30px;
+	/* Redius */
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+	/* Animation */
+	-webkit-transition: background 0.3s ease-in;
+  -moz-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+}
+
+#reader-controller:hover {
+	background: rgba(0,0,0,0.9);
+}
+
+#reader-controller:hover .rc-btn.hover {
+	background: #222;
+}
+
+.rc-label {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 5px;
 }
 
 .rc-btn {

@@ -79,6 +79,9 @@ app.configure(function() {
   app.get('/scripts/lib/ueditor/?', combo.combine({ rootPath: __dirname + '/assets/scripts/lib/ueditor' }), function(req, res) {
     res.end(res.body)
   })
+  app.get('/scripts/utils/?', combo.combine({ rootPath: __dirname + '/assets/scripts/utils' }), function(req, res) {
+    res.end(res.body)
+  })
   app.get('/scripts/widgets/?', combo.combine({ rootPath: __dirname + '/assets/scripts/widgets' }), function(req, res) {
     res.end(res.body)
   })
@@ -118,7 +121,7 @@ app.configure(function() {
       },
       '/:kanId': {
         get: routes.KAN,
-        '/:issue': {
+        '/:issue*': {
           get: routes.issue
         }
       }
